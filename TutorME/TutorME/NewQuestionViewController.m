@@ -1,0 +1,161 @@
+//
+//  NewQuestionViewController.m
+//  TutorME
+//
+//  Created by kmayo on 2016-04-04.
+//  Copyright © 2016 kmayo. All rights reserved.
+//
+
+#import "NewQuestionViewController.h"
+#import "AppDelegate.h"
+
+@interface NewQuestionViewController ()
+@property (strong, nonatomic) Firebase *ref;
+@property (strong, nonatomic) Firebase *qref;
+@property (strong, nonatomic) Firebase *uref;
+@property (strong, nonatomic) Firebase *uscoreref;
+@end
+
+@implementation NewQuestionViewController
+@synthesize descTextView, detailsTextView, nq, activity, tapper;
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Initialize Firebase reference
+    self.ref = [[Firebase alloc] initWithUrl:@"https://burning-heat-7302.firebaseio.com/"];
+    self.qref = [self.ref childByAppendingPath:@"questions"];
+    self.uref = [self.ref childByAppendingPath:@"users"];
+    self.uscoreref = [self.uref childByAppendingPath:[self.ref.authData.uid stringByAppendingString:@"/score"]];
+    
+    // Initialize Activity Indicator
+    [self.activity setHidden:YES];
+    [self.activity stopAnimating];
+    
+    // Gesture recognizer
+    tapper = [[UITapGestureRecognizer alloc]
+              initWithTarget:self action:@selector(handleSingleTap:)];
+    tapper.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapper];
+}
+
+- (void)handleSingleTap:(UITapGestureRecognizer *) sender
+{
+    [self.view endEditing:YES];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)back:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)clearDesc:(id)sender {
+    descTextView.text = @"";
+}
+
+- (IBAction)clearDetails:(id)sender {
+    detailsTextView.text = @"";
+}
+
+- (IBAction)clearBoth:(id)sender {
+    descTextView.text = @"";
+    detailsTextView.text = @"";
+}
+
+- (IBAction)submit:(id)sender {
+
+    NSString *msg = @"";
+    
+    self.nq = [[NewQuestion alloc] initWithData:descTextView.text details:detailsTextView.text];
+    
+    if ([self.nq.desc containsString:@"Enter the description here..."] || [self.nq.details containsString:@"Enter additional details here..."]) {
+        msg = @"Please enter your own description and details.";
+        [self alert:@"ERROR" message:msg];
+        
+    } else if (self.nq.isDescEmpty && self.nq.isDetailsEmpty) {
+        msg = @"Please enter the description and the details.";
+        [self alert:@"ERROR" message:msg];
+    } else if (self.nq.isDetailsEmpty) {
+        msg = @"Please enter the details.";
+        [self alert:@"ERROR" message:msg];
+    } else if (self.nq.isDescEmpty) {
+        msg = @"Please enter the description.";
+        [self alert:@"ERROR" message:msg];
+    } else {
+        
+        
+        
+        // The date of submission
+        NSString *dateSubmitted;
+        NSDate *date = [NSDate date];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"MMM d, yyyy 'at' h:mma"];
+        dateSubmitted = [dateFormatter stringFromDate:date];
+        
+        // The details of the question
+        NSDictionary *question = @{
+                                          @"description" : self.nq.desc,
+                                          @"details" : self.nq.details,
+                                          @"submitted_by" : self.ref.authData.uid,
+                                          @"submission_date" : dateSubmitted
+                                          };
+        
+        // Start Activity Indicator
+        [self.activity setHidden:NO];
+        [self.activity startAnimating];
+        
+        
+        // Firebase method for adding to the database - creates a new child for "questions" node
+        [[self.qref childByAutoId] setValue:question withCompletionBlock:^(NSError *error, Firebase *ref) {
+            
+            NSString *msg = @"";
+            
+            if (error) {
+                msg = @"The question could not be saved. Try again";
+                [self alert:@"ERROR" message:msg];
+            } else {
+                
+                // Update the score of the user for posting a question - Firebase method
+                [self.uscoreref runTransactionBlock:^FTransactionResult *(FMutableData *currentData) {
+                    NSNumber *value = currentData.value;
+                    if (currentData.value == [NSNull null]) {
+                        value = 0;
+                    }
+                    [currentData setValue:[NSNumber numberWithInt:(QUESTION_INC + [value intValue])]];
+                    return [FTransactionResult successWithValue:currentData];
+                }];
+                
+            }
+            
+            // Stop Activity Indicator
+            [self.activity setHidden:YES];
+            [self.activity stopAnimating];
+            
+            // Success message
+            msg = @"The question was saved successfully. Thank you.";
+            [self alert:@"SUCCESS" message:msg];
+           
+            [self resetBoth];
+            
+        }];
+        
+    }
+    
+}
+
+- (void)resetBoth {
+    self.descTextView.text = @"Enter the description here.";
+    self.detailsTextView.text = @"Enter additional details here.";
+}
+
+- (void)alert:(NSString *)title message:(NSString *)msg {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+@end
