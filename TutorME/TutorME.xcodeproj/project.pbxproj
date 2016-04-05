@@ -41,6 +41,7 @@
 		67D94DC21CB20E4100D84C7C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D94DC11CB20E4100D84C7C /* AboutViewController.m */; };
 		67D94DC51CB214F800D84C7C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D94DC41CB214F800D84C7C /* LoginViewController.m */; };
 		67D94DC81CB2150900D84C7C /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D94DC71CB2150900D84C7C /* RegisterViewController.m */; };
+		67F8329E1CB48253004C5811 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F8329D1CB48253004C5811 /* HomeTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,8 @@
 		67D94DC41CB214F800D84C7C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		67D94DC61CB2150900D84C7C /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		67D94DC71CB2150900D84C7C /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		67F8329C1CB48253004C5811 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		67F8329D1CB48253004C5811 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		9F6547F4747890712863D55B /* Pods-TutorME.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorME.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TutorME/Pods-TutorME.debug.xcconfig"; sourceTree = "<group>"; };
 		C0410AC47C29B98E157F9238 /* Pods-TutorME.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorME.release.xcconfig"; path = "Pods/Target Support Files/Pods-TutorME/Pods-TutorME.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +172,8 @@
 				67CAC6C41CB4040000963337 /* NewQuestion.m */,
 				67CAC6C61CB430C500963337 /* ScoreTableViewCell.h */,
 				67CAC6C71CB430C500963337 /* ScoreTableViewCell.m */,
+				67F8329C1CB48253004C5811 /* HomeTableViewCell.h */,
+				67F8329D1CB48253004C5811 /* HomeTableViewCell.m */,
 			);
 			name = "Special Classes";
 			sourceTree = "<group>";
@@ -378,6 +383,7 @@
 				67D94DC81CB2150900D84C7C /* RegisterViewController.m in Sources */,
 				67CAC6C51CB4040000963337 /* NewQuestion.m in Sources */,
 				67A7A4271CB2EBCF00C3C21C /* ScoreViewController.m in Sources */,
+				67F8329E1CB48253004C5811 /* HomeTableViewCell.m in Sources */,
 				67A7A42A1CB2EC0000C3C21C /* ProfileViewController.m in Sources */,
 				67D94DC51CB214F800D84C7C /* LoginViewController.m in Sources */,
 				67CAC6C81CB430C500963337 /* ScoreTableViewCell.m in Sources */,

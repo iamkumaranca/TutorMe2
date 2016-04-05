@@ -12,14 +12,14 @@
 
 @interface NewQuestionViewController : UITableViewController <UITextViewDelegate>
 {
-    IBOutlet UITextView *descTextView;
+    IBOutlet UITextField *descTextField;
     IBOutlet UITextView *detailsTextView;
     NewQuestion *nq;
     IBOutlet UIActivityIndicatorView *activity;
     UIGestureRecognizer *tapper;
 }
 
-@property (strong, nonatomic) IBOutlet UITextView *descTextView;
+@property (strong, nonatomic) IBOutlet UITextField *descTextField;
 @property (strong, nonatomic) IBOutlet UITextView *detailsTextView;
 @property (strong, nonatomic) NewQuestion *nq;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activity;

@@ -17,7 +17,7 @@
 @end
 
 @implementation NewQuestionViewController
-@synthesize descTextView, detailsTextView, nq, activity, tapper;
+@synthesize descTextField, detailsTextView, nq, activity, tapper;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,7 +53,7 @@
 }
 
 - (IBAction)clearDesc:(id)sender {
-    descTextView.text = @"";
+    descTextField.text = @"";
 }
 
 - (IBAction)clearDetails:(id)sender {
@@ -61,7 +61,7 @@
 }
 
 - (IBAction)clearBoth:(id)sender {
-    descTextView.text = @"";
+    descTextField.text = @"";
     detailsTextView.text = @"";
 }
 
@@ -69,10 +69,10 @@
 
     NSString *msg = @"";
     
-    self.nq = [[NewQuestion alloc] initWithData:descTextView.text details:detailsTextView.text];
+    self.nq = [[NewQuestion alloc] initWithData:descTextField.text details:detailsTextView.text];
     
-    if ([self.nq.desc containsString:@"Enter the description here..."] || [self.nq.details containsString:@"Enter additional details here..."]) {
-        msg = @"Please enter your own description and details.";
+    if ([self.nq.details containsString:@"Enter additional details here..."]) {
+        msg = @"Please enter your own details.";
         [self alert:@"ERROR" message:msg];
         
     } else if (self.nq.isDescEmpty && self.nq.isDetailsEmpty) {
@@ -147,7 +147,7 @@
 }
 
 - (void)resetBoth {
-    self.descTextView.text = @"Enter the description here.";
+    self.descTextField.text = @"Enter the description here.";
     self.detailsTextView.text = @"Enter additional details here.";
 }
 
