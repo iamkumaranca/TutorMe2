@@ -23,10 +23,10 @@
         
         nameLbl.textAlignment = NSTextAlignmentLeft;
         nameLbl.textColor = [UIColor blackColor];
-        nameLbl.font = [UIFont fontWithName:@"GillSans-Bold" size:20.0f];
+        nameLbl.font = [UIFont fontWithName:@"GillSans-Bold" size:14.0f];
         schoolLbl.textAlignment = NSTextAlignmentLeft;
         schoolLbl.textColor = [UIColor blackColor];
-        schoolLbl.font = [UIFont fontWithName:@"GillSans-Italic" size:18.0f];
+        schoolLbl.font = [UIFont fontWithName:@"GillSans-Italic" size:12.0f];
         scoreLbl.textAlignment = NSTextAlignmentCenter;
         scoreLbl.layer.masksToBounds = YES;
         scoreLbl.layer.cornerRadius = 25;
@@ -50,10 +50,10 @@
     frame = CGRectMake(15, 10, 50, 50);
     scoreLbl.frame = frame;
         
-    frame = CGRectMake(90, 10, 260, 20);
+    frame = CGRectMake(80, 10, 240, 20);
     nameLbl.frame = frame;
         
-    frame = CGRectMake(90, 40, 260, 20);
+    frame = CGRectMake(80, 40, 240, 20);
     schoolLbl.frame = frame;
 
 }
