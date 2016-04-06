@@ -23,7 +23,7 @@
         
         descLbl.textAlignment = NSTextAlignmentLeft;
         descLbl.textColor = [UIColor blackColor];
-        descLbl.font = [UIFont fontWithName:@"GillSans-Bold" size:14.0f];
+        descLbl.font = [UIFont fontWithName:@"GillSans-Bold" size:18.0f];
         
         nameLbl.textAlignment = NSTextAlignmentRight;
         nameLbl.textColor = [UIColor grayColor];
@@ -46,13 +46,13 @@
     
     CGRect frame;
     
-    frame = CGRectMake(80, 10, 250, 20);
+    frame = CGRectMake(10, 5, 270, 20);
     descLbl.frame = frame;
     
-    frame = CGRectMake(80, 20, 250, 20);
+    frame = CGRectMake(10, 35, 270, 15);
     nameLbl.frame = frame;
     
-    frame = CGRectMake(80, 40, 250, 20);
+    frame = CGRectMake(10, 50, 270, 15);
     dateLbl.frame = frame;
     
 }
