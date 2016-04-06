@@ -147,7 +147,7 @@
 }
 
 - (void)resetBoth {
-    self.descTextField.text = @"Enter the description here.";
+    self.descTextField.text = @"";
     self.detailsTextView.text = @"Enter additional details here.";
 }
 
