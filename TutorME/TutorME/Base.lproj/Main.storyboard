@@ -471,40 +471,13 @@
         <scene sceneID="iWN-iV-EtP">
             <objects>
                 <tableViewController id="qYB-Vb-xcc" customClass="HomeViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="OJQ-p8-7LD">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bhh-Lg-f21">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="4X7-1W-uHM">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4X7-1W-uHM" id="MMb-Lp-Dhl">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="T9s-Q3-ba7">
-                                <rect key="frame" x="0.0" y="136" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T9s-Q3-ba7" id="7pI-PB-vL8">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="oWa-lt-FnD">
-                                <rect key="frame" x="0.0" y="180" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oWa-lt-FnD" id="ySa-p2-tAN">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
                         <connections>
-                            <outlet property="dataSource" destination="qYB-Vb-xcc" id="VUb-u7-lPo"/>
-                            <outlet property="delegate" destination="qYB-Vb-xcc" id="cR7-gg-rOi"/>
+                            <outlet property="dataSource" destination="qYB-Vb-xcc" id="1b1-kk-oM8"/>
+                            <outlet property="delegate" destination="qYB-Vb-xcc" id="sAq-99-5XE"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="TutorMe" id="87H-7V-3Sj">
@@ -521,6 +494,9 @@
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="homeTableView" destination="bhh-Lg-f21" id="WX8-Zd-ELO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhS-Bk-RhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1178,6 +1154,6 @@
         <image name="user.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9QA-eF-zAJ"/>
+        <segue reference="6E1-10-KqU"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,9 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <Firebase/Firebase.h>
 
-@interface HomeViewController : UITableViewController
+@interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
-
+    NSMutableArray *descList;
+    NSMutableArray *nameList;
+    NSMutableArray *dateList;
+    IBOutlet UITableView *homeTableView;
 }
+
+@property (strong, nonatomic) NSMutableArray *descList;
+@property (strong, nonatomic) NSMutableArray *nameList;
+@property (strong, nonatomic) NSMutableArray *dateList;
+@property (strong, nonatomic) IBOutlet UITableView *homeTableView;
 
 @end
