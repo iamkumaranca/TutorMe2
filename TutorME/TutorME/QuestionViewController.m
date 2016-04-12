@@ -14,7 +14,7 @@
 @end
 
 @implementation QuestionViewController
-@synthesize descLbl, detailsLbl;
+@synthesize descLbl, detailsLbl, qid;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,7 +22,7 @@
     // Initialize Firebase refs
     self.ref = [[Firebase alloc] initWithUrl:@"https://burning-heat-7302.firebaseio.com/"];
     
-    
+    NSLog(@"%@", self.qid);
     
 }
 
@@ -45,6 +45,10 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (IBAction)back:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

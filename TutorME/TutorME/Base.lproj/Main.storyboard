@@ -851,7 +851,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="TutorMe" id="fPM-wv-kbu">
-                        <barButtonItem key="leftBarButtonItem" image="back" id="tKp-uE-eHA"/>
+                        <barButtonItem key="leftBarButtonItem" image="back" id="tKp-uE-eHA">
+                            <connections>
+                                <action selector="back:" destination="Add-5F-yE5" id="tFp-P0-7uz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -1271,7 +1275,7 @@
         <!--Navigation Controller-->
         <scene sceneID="s2i-cp-7WH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bsc-y9-JQ7" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="questionNC" automaticallyAdjustsScrollViewInsets="NO" id="Bsc-y9-JQ7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

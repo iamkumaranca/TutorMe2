@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Firebase/Firebase.h>
+#import "QuestionViewController.h"
 
 @interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {

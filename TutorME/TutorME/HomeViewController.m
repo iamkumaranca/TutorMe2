@@ -63,7 +63,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.descList count];
+    return [qidList count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -87,6 +87,19 @@
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Go to Question screen (UINavigationController)
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *questionNC = [sb instantiateViewControllerWithIdentifier:@"questionNC"];
+    
+    // Pass the qid to the Question View Controller
+    QuestionViewController *questionVC = (QuestionViewController *)[questionNC topViewController];
+    questionVC.qid = [self.qidList objectAtIndex:indexPath.row];
+    
+    [questionNC setModalPresentationStyle:UIModalPresentationFullScreen];
+    [self presentViewController:questionNC animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

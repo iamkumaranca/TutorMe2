@@ -13,9 +13,11 @@
 {
     IBOutlet UILabel *descLbl;
     IBOutlet UILabel *detailsLbl;
+    NSString *qid;
 }
 
 @property (strong, nonatomic) IBOutlet UILabel *descLbl;
 @property (strong, nonatomic) IBOutlet UILabel *detailsLbl;
+@property (strong, nonatomic) NSString *qid;
 
 @end
