@@ -12,12 +12,16 @@
 @interface QuestionViewController : UITableViewController <UITextViewDelegate>
 {
     IBOutlet UILabel *descLbl;
-    IBOutlet UILabel *detailsLbl;
+    IBOutlet UITextView *detailsTextView;
+    IBOutlet UILabel *submittedByLbl;
+    IBOutlet UILabel *dateSubmittedLbl;
     NSString *qid;
 }
 
 @property (strong, nonatomic) IBOutlet UILabel *descLbl;
-@property (strong, nonatomic) IBOutlet UILabel *detailsLbl;
+@property (strong, nonatomic) IBOutlet UITextView *detailsTextView;
+@property (strong, nonatomic) IBOutlet UILabel *submittedByLbl;
+@property (strong, nonatomic) IBOutlet UILabel *dateSubmittedLbl;
 @property (strong, nonatomic) NSString *qid;
 
 @end

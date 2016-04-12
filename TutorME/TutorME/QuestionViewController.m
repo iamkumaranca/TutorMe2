@@ -14,16 +14,14 @@
 @end
 
 @implementation QuestionViewController
-@synthesize descLbl, detailsLbl, qid;
+@synthesize descLbl, detailsTextView, submittedByLbl, dateSubmittedLbl, qid;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     // Initialize Firebase refs
     self.ref = [[Firebase alloc] initWithUrl:@"https://burning-heat-7302.firebaseio.com/"];
-    
-    NSLog(@"%@", self.qid);
-    
+    self.qref = [self.ref childByAppendingPath:[@"questions/" stringByAppendingString:self.qid]];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -32,15 +30,17 @@
     // Initialize description and details label
     self.descLbl.numberOfLines = 0;
     [self.descLbl sizeToFit];
-    
-    self.detailsLbl.numberOfLines = 0;
-    [self.detailsLbl sizeToFit];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    
+    [self.qref observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *qsnapshot) {
+        self.descLbl.text = qsnapshot.value[@"description"];
+        self.detailsTextView.text = qsnapshot.value[@"details"];
+        self.submittedByLbl.text = [@"Submitted By: " stringByAppendingString:qsnapshot.value[@"submitted_by_name"]];
+        self.dateSubmittedLbl.text = [@"Date Submitted: " stringByAppendingString:qsnapshot.value[@"submission_date"]];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
