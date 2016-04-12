@@ -81,6 +81,10 @@
                                                         <action selector="login:" destination="OW1-bI-bWL" eventType="touchUpInside" id="dhs-4F-5ex"/>
                                                     </connections>
                                                 </button>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hup-EO-3Qa">
+                                                    <rect key="frame" x="142" y="41" width="37" height="37"/>
+                                                    <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -114,6 +118,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="activity" destination="hup-EO-3Qa" id="Ggw-Hh-9Vt"/>
                         <outlet property="emailField" destination="5eU-uj-hgT" id="LVq-Oc-luj"/>
                         <outlet property="passwordField" destination="um8-ew-Y1P" id="8wP-bK-mrk"/>
                     </connections>

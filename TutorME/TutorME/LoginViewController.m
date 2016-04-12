@@ -14,7 +14,7 @@
 @end
 
 @implementation LoginViewController
-@synthesize emailField, passwordField, login;
+@synthesize emailField, passwordField, activity, login;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,7 +22,9 @@
     // Initialize Firebase reference
     self.ref = [[Firebase alloc] initWithUrl:@"https://burning-heat-7302.firebaseio.com/"];
     
-    
+    // Initialize Activity Indicator
+    [self.activity setHidden:YES];
+    [self.activity stopAnimating];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,6 +46,10 @@
         msg = @"Please enter your email.";
         [self alert:msg];
     } else {
+        
+        // Start Activity Indicator
+        [self.activity setHidden:NO];
+        [self.activity startAnimating];
         
         // Firebase authentication
         [self.ref authUser:login.email password:login.password withCompletionBlock:^(NSError* error, FAuthData* authData) {
@@ -77,6 +83,10 @@
                 [homeTBC setModalPresentationStyle:UIModalPresentationFullScreen];
                 [self presentViewController:homeTBC animated:YES completion:nil];
             }
+            
+            // End Activity Indicator
+            [self.activity setHidden:YES];
+            [self.activity stopAnimating];
          }];
     }
 }
