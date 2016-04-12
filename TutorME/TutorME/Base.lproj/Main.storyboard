@@ -151,7 +151,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user.png" translatesAutoresizingMaskIntoConstraints="NO" id="tS0-EA-Boy">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="tS0-EA-Boy">
                                                     <rect key="frame" x="280" y="4" width="32" height="32"/>
                                                 </imageView>
                                             </subviews>
@@ -223,7 +223,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="school.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kzk-EH-fhA">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="school" translatesAutoresizingMaskIntoConstraints="NO" id="Kzk-EH-fhA">
                                                     <rect key="frame" x="280" y="6" width="32" height="32"/>
                                                 </imageView>
                                             </subviews>
@@ -324,7 +324,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="key.png" translatesAutoresizingMaskIntoConstraints="NO" id="ae2-tk-ac3">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="key" translatesAutoresizingMaskIntoConstraints="NO" id="ae2-tk-ac3">
                                                     <rect key="frame" x="280" y="4" width="32" height="32"/>
                                                 </imageView>
                                             </subviews>
@@ -421,12 +421,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Registration" id="fEG-hO-xGh">
-                        <barButtonItem key="leftBarButtonItem" image="clear.png" id="LzG-F5-WpH">
+                        <barButtonItem key="leftBarButtonItem" image="clear" id="LzG-F5-WpH">
                             <connections>
                                 <action selector="resetAll:" destination="X9o-1j-bZ0" id="E83-bS-hj8"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="submit.png" id="elv-fM-XI5">
+                        <barButtonItem key="rightBarButtonItem" image="submit" id="elv-fM-XI5">
                             <connections>
                                 <action selector="submitRegistration:" destination="X9o-1j-bZ0" id="4he-bj-UFk"/>
                             </connections>
@@ -485,12 +485,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="TutorMe" id="87H-7V-3Sj">
-                        <barButtonItem key="leftBarButtonItem" image="logout.png" id="O7d-cW-l7Y">
+                        <barButtonItem key="leftBarButtonItem" image="logout" id="O7d-cW-l7Y">
                             <connections>
                                 <action selector="logout:" destination="qYB-Vb-xcc" id="eqM-gk-him"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="new.png" id="2Ok-lj-jOO">
+                        <barButtonItem key="rightBarButtonItem" image="new" id="2Ok-lj-jOO">
                             <connections>
                                 <segue destination="87k-DQ-GNc" kind="presentation" identifier="homeSegue" id="6E1-10-KqU"/>
                             </connections>
@@ -532,7 +532,7 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjd-cH-FHL">
                                                     <rect key="frame" x="280" y="6" width="32" height="32"/>
-                                                    <state key="normal" backgroundImage="edit.png"/>
+                                                    <state key="normal" backgroundImage="edit"/>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -597,7 +597,7 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZ1-Nd-gJm">
                                                     <rect key="frame" x="280" y="6" width="32" height="32"/>
-                                                    <state key="normal" backgroundImage="edit.png"/>
+                                                    <state key="normal" backgroundImage="edit"/>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -701,12 +701,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Profile" id="QSg-ly-syO">
-                        <barButtonItem key="leftBarButtonItem" image="logout.png" id="Mft-jF-WXZ">
+                        <barButtonItem key="leftBarButtonItem" image="logout" id="Mft-jF-WXZ">
                             <connections>
                                 <action selector="logout:" destination="yoz-B1-BC4" id="ChR-nl-STc"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="new.png" id="8Ae-Fv-zfR">
+                        <barButtonItem key="rightBarButtonItem" image="new" id="8Ae-Fv-zfR">
                             <connections>
                                 <segue destination="87k-DQ-GNc" kind="presentation" identifier="profileSegue" id="YMz-iK-8Zz"/>
                             </connections>
@@ -753,7 +753,7 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMW-Pa-iXh">
                                                     <rect key="frame" x="280" y="6" width="32" height="32"/>
-                                                    <state key="normal" backgroundImage="eraser.png"/>
+                                                    <state key="normal" backgroundImage="eraser"/>
                                                     <connections>
                                                         <action selector="clearDesc:" destination="mL2-Wj-YNr" eventType="touchUpInside" id="KXd-9U-9km"/>
                                                     </connections>
@@ -792,7 +792,7 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvh-4E-T9s">
                                                     <rect key="frame" x="280" y="6" width="32" height="32"/>
-                                                    <state key="normal" backgroundImage="eraser.png"/>
+                                                    <state key="normal" backgroundImage="eraser"/>
                                                     <connections>
                                                         <action selector="clearDetails:" destination="mL2-Wj-YNr" eventType="touchUpInside" id="AGw-qY-B5J"/>
                                                     </connections>
@@ -893,7 +893,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="New Question" id="azc-M5-MJi">
-                        <barButtonItem key="leftBarButtonItem" image="back.png" id="sE3-WE-ssv">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="sE3-WE-ssv">
                             <connections>
                                 <action selector="back:" destination="mL2-Wj-YNr" id="ef0-ZN-Riv"/>
                             </connections>
@@ -925,12 +925,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Scores" id="A1e-WJ-1Bx">
-                        <barButtonItem key="leftBarButtonItem" image="logout.png" id="3Yo-uR-3Nu">
+                        <barButtonItem key="leftBarButtonItem" image="logout" id="3Yo-uR-3Nu">
                             <connections>
                                 <action selector="logout:" destination="tsu-S5-HV8" id="19v-MZ-W5B"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="new.png" id="9CX-sg-C11">
+                        <barButtonItem key="rightBarButtonItem" image="new" id="9CX-sg-C11">
                             <connections>
                                 <segue destination="87k-DQ-GNc" kind="presentation" identifier="scoreSegue" id="9QA-eF-zAJ"/>
                             </connections>
@@ -992,7 +992,7 @@
         <scene sceneID="hAG-bM-njb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="441-Wz-T0K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="profile.png" id="Jyu-NE-laB"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" id="Jyu-NE-laB"/>
                     <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -1013,7 +1013,7 @@
         <scene sceneID="6Wh-er-x4F">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dmn-er-4zy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="home.png" id="Agy-E5-onH"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="Agy-E5-onH"/>
                     <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -1034,7 +1034,7 @@
         <scene sceneID="Irp-Ph-oZq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MCu-Ng-Z8W" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Scores" image="score.png" id="Z4Q-90-QUV"/>
+                    <tabBarItem key="tabBarItem" title="Scores" image="score" id="Z4Q-90-QUV"/>
                     <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -1075,7 +1075,7 @@
         <scene sceneID="uaU-VK-iVt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vie-Cs-nyr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Register" image="register.png" id="0Cx-jD-Glc"/>
+                    <tabBarItem key="tabBarItem" title="Register" image="register" id="0Cx-jD-Glc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QAB-gv-d4g">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1094,7 +1094,7 @@
         <scene sceneID="Ygd-Jr-Pv2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CIa-6I-us2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Login" image="login.png" id="jYQ-rp-Ney"/>
+                    <tabBarItem key="tabBarItem" title="Login" image="login" id="jYQ-rp-Ney"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CsX-j9-WKU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1113,7 +1113,7 @@
         <scene sceneID="qks-ca-Rif">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mDt-fh-b2A" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="About" image="about.png" id="kwd-9G-fhB"/>
+                    <tabBarItem key="tabBarItem" title="About" image="about" id="kwd-9G-fhB"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
@@ -1133,22 +1133,22 @@
         </scene>
     </scenes>
     <resources>
-        <image name="about.png" width="32" height="32"/>
-        <image name="back.png" width="32" height="32"/>
-        <image name="clear.png" width="32" height="32"/>
-        <image name="edit.png" width="32" height="32"/>
-        <image name="eraser.png" width="32" height="32"/>
-        <image name="home.png" width="32" height="32"/>
-        <image name="key.png" width="32" height="32"/>
-        <image name="login.png" width="32" height="32"/>
-        <image name="logout.png" width="32" height="32"/>
-        <image name="new.png" width="32" height="32"/>
-        <image name="profile.png" width="32" height="32"/>
-        <image name="register.png" width="32" height="32"/>
-        <image name="school.png" width="32" height="32"/>
-        <image name="score.png" width="32" height="32"/>
-        <image name="submit.png" width="32" height="24"/>
-        <image name="user.png" width="32" height="32"/>
+        <image name="about" width="32" height="32"/>
+        <image name="back" width="32" height="32"/>
+        <image name="clear" width="32" height="32"/>
+        <image name="edit" width="32" height="32"/>
+        <image name="eraser" width="32" height="32"/>
+        <image name="home" width="32" height="32"/>
+        <image name="key" width="32" height="32"/>
+        <image name="login" width="32" height="32"/>
+        <image name="logout" width="32" height="32"/>
+        <image name="new" width="32" height="32"/>
+        <image name="profile" width="32" height="32"/>
+        <image name="register" width="32" height="32"/>
+        <image name="school" width="32" height="32"/>
+        <image name="score" width="32" height="32"/>
+        <image name="submit" width="32" height="24"/>
+        <image name="user" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9QA-eF-zAJ"/>
