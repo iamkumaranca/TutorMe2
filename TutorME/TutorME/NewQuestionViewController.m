@@ -14,6 +14,9 @@
 @property (strong, nonatomic) Firebase *qref;
 @property (strong, nonatomic) Firebase *uref;
 @property (strong, nonatomic) Firebase *uscoreref;
+
+@property (strong, nonatomic) NSString *fname;
+@property (strong, nonatomic) NSString *lname;
 @end
 
 @implementation NewQuestionViewController
@@ -36,6 +39,16 @@
               initWithTarget:self action:@selector(handleSingleTap:)];
     tapper.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tapper];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // Retrieve user first name and last name to write to database
+    [[self.uref childByAppendingPath:self.ref.authData.uid] observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *usnapshot) {
+        self.fname = usnapshot.value[@"first_name"];
+        self.lname = usnapshot.value[@"last_name"];
+    }];
 }
 
 - (void)handleSingleTap:(UITapGestureRecognizer *) sender
@@ -86,8 +99,6 @@
         [self alert:@"ERROR" message:msg];
     } else {
         
-        
-        
         // The date of submission
         NSString *dateSubmitted;
         NSDate *date = [NSDate date];
@@ -95,11 +106,15 @@
         [dateFormatter setDateFormat:@"MMM d, yyyy 'at' h:mma"];
         dateSubmitted = [dateFormatter stringFromDate:date];
         
+        // Build the full name from the first name and last name
+        NSString *fullName = [self.fname stringByAppendingFormat:@" %@", self.lname];
+        
         // The details of the question
         NSDictionary *question = @{
                                           @"description" : self.nq.desc,
                                           @"details" : self.nq.details,
-                                          @"submitted_by" : self.ref.authData.uid,
+                                          @"submitted_by_name" : fullName,
+                                          @"submitted_by_id" : self.ref.authData.uid,
                                           @"submission_date" : dateSubmitted
                                           };
         
@@ -139,11 +154,8 @@
             [self alert:@"SUCCESS" message:msg];
            
             [self resetBoth];
-            
         }];
-        
     }
-    
 }
 
 - (void)resetBoth {
