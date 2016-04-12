@@ -13,6 +13,9 @@
 @property (strong, nonatomic) Firebase *ref;
 @property (strong, nonatomic) Firebase *qref;
 @property (strong, nonatomic) Firebase *uref;
+@property FirebaseHandle qhandle;
+@property FirebaseHandle uhandle;
+@property NSMutableArray *tempList;
 @end
 
 @implementation HomeViewController
@@ -21,34 +24,52 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.homeTableView.dataSource = self;
-    self.homeTableView.delegate = self;
+    //self.homeTableView.dataSource = self;
+    //self.homeTableView.delegate = self;
     
     // Initialize Firebase reference
     self.ref = [[Firebase alloc] initWithUrl:@"https://burning-heat-7302.firebaseio.com/"];
     self.qref = [self.ref childByAppendingPath:@"questions"];
     self.uref = [self.ref childByAppendingPath:@"users"];
     
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    //NSLog(@"User Logged In with UID||%@", self.ref.authData.uid);
     
     // Initialize arrays
     self.descList = [[NSMutableArray alloc] init];
     self.nameList = [[NSMutableArray alloc] init];
     self.dateList = [[NSMutableArray alloc] init];
+    self.tempList = [[NSMutableArray alloc] init];
     
-    // Retrieve question details from the database
-    [[self.qref queryOrderedByChild:@"submission_date"] observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
 
-        // Save in array so score is in descending order
-        [self.descList insertObject:snapshot.value[@"description"] atIndex:0];
-        [self.nameList insertObject:[@"Submitted by: " stringByAppendingString:snapshot.value[@"submitted_by"]] atIndex:0];
-        [self.dateList insertObject:[@"Date submitted: " stringByAppendingString:snapshot.value[@"submission_date"]] atIndex:0];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    
+    [self.descList removeAllObjects];
+    [self.nameList removeAllObjects];
+    [self.dateList removeAllObjects];
+    
+    //[self.uref removeObserverWithHandle:self.uhandle];
+    [self.qref removeObserverWithHandle:self.qhandle];
+    
+    
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    self.qhandle = [[self.qref queryOrderedByChild:@"submission_date"] observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *qsnapshot) {
+                
+        // Save in array so submission date is in descending order
+        [self.descList insertObject:qsnapshot.value[@"description"] atIndex:0];
+        [self.nameList insertObject:qsnapshot.value[@"submitted_by"] atIndex:0];
+        [self.dateList insertObject:qsnapshot.value[@"submission_date"] atIndex:0];
         [self.homeTableView reloadData];
+
     }];
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
