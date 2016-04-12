@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Firebase/Firebase.h>
 
 @interface QuestionViewController : UITableViewController <UITextViewDelegate>
 {
-    
+    IBOutlet UILabel *descLbl;
+    IBOutlet UILabel *detailsLbl;
 }
+
+@property (strong, nonatomic) IBOutlet UILabel *descLbl;
+@property (strong, nonatomic) IBOutlet UILabel *detailsLbl;
 
 @end
