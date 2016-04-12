@@ -14,62 +14,52 @@
 @property (strong, nonatomic) Firebase *qref;
 @property (strong, nonatomic) Firebase *uref;
 @property FirebaseHandle qhandle;
-@property FirebaseHandle uhandle;
-@property NSMutableArray *tempList;
 @end
 
 @implementation HomeViewController
-@synthesize descList, nameList, dateList, homeTableView;
+@synthesize qidList, descList, nameList, dateList, homeTableView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //self.homeTableView.dataSource = self;
-    //self.homeTableView.delegate = self;
     
     // Initialize Firebase reference
     self.ref = [[Firebase alloc] initWithUrl:@"https://burning-heat-7302.firebaseio.com/"];
     self.qref = [self.ref childByAppendingPath:@"questions"];
     self.uref = [self.ref childByAppendingPath:@"users"];
     
-    
     // Initialize arrays
+    self.qidList = [[NSMutableArray alloc] init];
     self.descList = [[NSMutableArray alloc] init];
     self.nameList = [[NSMutableArray alloc] init];
     self.dateList = [[NSMutableArray alloc] init];
-    self.tempList = [[NSMutableArray alloc] init];
-    
-
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    
+    [self.qidList removeAllObjects];
     [self.descList removeAllObjects];
     [self.nameList removeAllObjects];
     [self.dateList removeAllObjects];
-    
-    //[self.uref removeObserverWithHandle:self.uhandle];
+
     [self.qref removeObserverWithHandle:self.qhandle];
-    
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    self.qhandle = [[self.qref queryOrderedByChild:@"submission_date"] observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *qsnapshot) {
+    self.qhandle = [[self.qref queryOrderedByKey] observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *qsnapshot) {
                 
         // Save in array so submission date is in descending order
-        [self.descList insertObject:qsnapshot.value[@"description"] atIndex:0];
-        [self.nameList insertObject:qsnapshot.value[@"submitted_by"] atIndex:0];
-        [self.dateList insertObject:qsnapshot.value[@"submission_date"] atIndex:0];
+        if (qsnapshot.value != [NSNull null]) {
+            [self.qidList insertObject:qsnapshot.key atIndex:0];
+            [self.descList insertObject:qsnapshot.value[@"description"] atIndex:0];
+            [self.nameList insertObject:qsnapshot.value[@"submitted_by_name"] atIndex:0];
+            [self.dateList insertObject:qsnapshot.value[@"submission_date"] atIndex:0];
+        }
+        
         [self.homeTableView reloadData];
-
     }];
-
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -91,8 +81,8 @@
     
     NSInteger row = indexPath.row;
     cell.descLbl.text = [self.descList objectAtIndex:row];
-    cell.nameLbl.text = [self.nameList objectAtIndex:row];
-    cell.dateLbl.text = [self.dateList objectAtIndex:row];
+    cell.nameLbl.text = [@"Submitted by: " stringByAppendingString:[self.nameList objectAtIndex:row]];
+    cell.dateLbl.text = [@"Date Submitted: " stringByAppendingString:[self.dateList objectAtIndex:row]];
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     

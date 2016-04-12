@@ -74,13 +74,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TutorME/HomeViewController.m"
-            timestampString = "482124969.085882"
+            timestampString = "482127176.047578"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "@synthesize qidList, descList, nameList, dateList, homeTableView;"
-            landmarkType = "19">
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "@interface HomeViewController()"
+            landmarkType = "2">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TutorME/NewQuestionViewController.m"
-            timestampString = "482124969.085882"
+            timestampString = "482127176.047578"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "-submit:"
             landmarkType = "5">
          </BreakpointContent>
