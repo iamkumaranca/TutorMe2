@@ -7,6 +7,7 @@
 //
 
 #import "QuestionViewController.h"
+#import "QuestionTableViewCell.h"
 #import "AppDelegate.h"
 
 @interface QuestionViewController ()
@@ -15,13 +16,14 @@
 @property (strong, nonatomic) Firebase *aref;
 @property (strong, nonatomic) Firebase *uref;
 @property (strong, nonatomic) Firebase *uscoreref;
+@property FirebaseHandle ahandle;
 
 @property (strong, nonatomic) NSString *fname;
 @property (strong, nonatomic) NSString *lname;
 @end
 
 @implementation QuestionViewController
-@synthesize descTextView, detailsTextView, submittedByLbl, dateSubmittedLbl, ansTextView, activity, tapper, qid;
+@synthesize descTextView, detailsTextView, ansTextView, activity, ansTableView, ansList, tapper, qid;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,6 +41,21 @@
     tapper.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tapper];
     
+    // Initialize Array
+    self.ansList = [[NSMutableArray alloc] init];
+    
+    // Initialize Activity Indicator
+    [self.activity setHidden:YES];
+    [self.activity stopAnimating];
+    
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [self.ansList removeAllObjects];
+    
+    [self.aref removeObserverWithHandle:self.ahandle];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -47,9 +64,16 @@
     // Retrieve question - description, details, submitted by, and submission date
     [self.qref observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *qsnapshot) {
         self.descTextView.text = qsnapshot.value[@"description"];
-        self.detailsTextView.text = qsnapshot.value[@"details"];
-        self.submittedByLbl.text = [@"Submitted By: " stringByAppendingString:qsnapshot.value[@"submitted_by_name"]];
-        self.dateSubmittedLbl.text = [@"Date Submitted: " stringByAppendingString:qsnapshot.value[@"submission_date"]];
+        
+        NSArray *qdetails = @[
+                              qsnapshot.value[@"details"],
+                              @"\n",
+                              [@"Submitted by: " stringByAppendingString:qsnapshot.value[@"submitted_by_name"]],
+                              [@"Submission date: " stringByAppendingString:qsnapshot.value[@"submission_date"]]
+                              ];
+        
+        self.detailsTextView.text = [qdetails componentsJoinedByString:@"\n"];
+
     }];
     
     // Retrieve user first name and last name to write to database
@@ -57,6 +81,44 @@
         self.fname = usnapshot.value[@"first_name"];
         self.lname = usnapshot.value[@"last_name"];
     }];
+    
+    // Retrieve answers list if any
+    self.ahandle = [[self.aref queryOrderedByKey] observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *asnapshot) {
+        
+        if (asnapshot.value != [NSNull null]) {
+            if ([asnapshot.value[@"question_id"] isEqualToString:self.qid]) {
+                NSString *details = asnapshot.value[@"details"];
+                NSString *submittedBy = asnapshot.value[@"submitted_by_name"];
+                NSString *submissionDate = asnapshot.value[@"submission_date"];
+                [self.ansList insertObject:[details stringByAppendingFormat:@" [%@ %@]", submittedBy, submissionDate] atIndex:0];
+            }
+        }
+        
+        [self.ansTableView reloadData];
+    }];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [ansList count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *cellId = @"cell";
+    
+    QuestionTableViewCell *cell = (QuestionTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellId];
+    
+    if (cell == nil) {
+        cell = [[QuestionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+    }
+    
+    NSInteger row = indexPath.row;
+    cell.ansTextView.text = [self.ansList objectAtIndex:row];
+    
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,7 +137,7 @@
     self.ansTextView.text = @"Enter your answer here...";
 }
 
-- (void)handleSingleTap:(UITapGestureRecognizer *) sender
+- (void)handleSingleTap:(UITapGestureRecognizer *)sender
 {
     [self.view endEditing:YES];
 }
@@ -112,7 +174,7 @@
         [self.activity startAnimating];
         
         
-        // Firebase method for adding to the database - creates a new child for "questions" node
+        // Firebase method for adding to the database - creates a new child for "answers" node
         [[self.aref childByAutoId] setValue:answer withCompletionBlock:^(NSError *error, Firebase *ref) {
             
             NSString *msg = @"";
@@ -137,10 +199,6 @@
             // Stop Activity Indicator
             [self.activity setHidden:YES];
             [self.activity stopAnimating];
-            
-            // Success message
-            msg = @"The answer was saved successfully. Thank you.";
-            [self alert:@"SUCCESS" message:msg];
             
             [self resetAnswer];
         }];

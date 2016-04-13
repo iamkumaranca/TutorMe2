@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		385D869403DC03AB35B0BFA1 /* libPods-TutorME.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4498332D6A341D3D23543A84 /* libPods-TutorME.a */; };
+		6742C2D31CBDF02F00563083 /* QuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6742C2D21CBDF02F00563083 /* QuestionTableViewCell.m */; };
 		6788EED51CBD70D7007B4070 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6788EED41CBD70D7007B4070 /* QuestionViewController.m */; };
 		67A7A4241CB2EBB700C3C21C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A7A4231CB2EBB700C3C21C /* HomeViewController.m */; };
 		67A7A4271CB2EBCF00C3C21C /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A7A4261CB2EBCF00C3C21C /* ScoreViewController.m */; };
@@ -30,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		4498332D6A341D3D23543A84 /* libPods-TutorME.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TutorME.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6742C2D11CBDF02F00563083 /* QuestionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionTableViewCell.h; sourceTree = "<group>"; };
+		6742C2D21CBDF02F00563083 /* QuestionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionTableViewCell.m; sourceTree = "<group>"; };
 		6788EED31CBD70D7007B4070 /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
 		6788EED41CBD70D7007B4070 /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
 		67A7A4221CB2EBB700C3C21C /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 				67CAC6C71CB430C500963337 /* ScoreTableViewCell.m */,
 				67F8329C1CB48253004C5811 /* HomeTableViewCell.h */,
 				67F8329D1CB48253004C5811 /* HomeTableViewCell.m */,
+				6742C2D11CBDF02F00563083 /* QuestionTableViewCell.h */,
+				6742C2D21CBDF02F00563083 /* QuestionTableViewCell.m */,
 			);
 			name = "Special Classes";
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 				67D94D781CB1AD9100D84C7C /* AppDelegate.m in Sources */,
 				6788EED51CBD70D7007B4070 /* QuestionViewController.m in Sources */,
 				67D94D751CB1AD9100D84C7C /* main.m in Sources */,
+				6742C2D31CBDF02F00563083 /* QuestionTableViewCell.m in Sources */,
 				67A7A4241CB2EBB700C3C21C /* HomeViewController.m in Sources */,
 				67CAC6C01CB3579300963337 /* Registration.m in Sources */,
 			);
