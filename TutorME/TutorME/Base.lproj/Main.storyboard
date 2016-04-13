@@ -813,10 +813,16 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcM-hh-bdM">
                                 <rect key="frame" x="268" y="353" width="32" height="32"/>
                                 <state key="normal" backgroundImage="facebook"/>
+                                <connections>
+                                    <action selector="postQuestionToFacebook:" destination="jp8-cn-bq3" eventType="touchUpInside" id="JNl-j6-4ie"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANy-ye-DgN">
                                 <rect key="frame" x="228" y="353" width="32" height="32"/>
                                 <state key="normal" backgroundImage="twitter"/>
+                                <connections>
+                                    <action selector="postQuestionToTwitter:" destination="jp8-cn-bq3" eventType="touchUpInside" id="CAF-43-okq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -67,9 +67,8 @@
         
         NSArray *qdetails = @[
                               qsnapshot.value[@"details"],
-                              @"\n",
-                              [@"Submitted by: " stringByAppendingString:qsnapshot.value[@"submitted_by_name"]],
-                              [@"Submission date: " stringByAppendingString:qsnapshot.value[@"submission_date"]]
+                              [@"Asked by: " stringByAppendingString:qsnapshot.value[@"submitted_by_name"]],
+                              [@"Asked on: " stringByAppendingString:qsnapshot.value[@"submission_date"]]
                               ];
         
         self.detailsTextView.text = [qdetails componentsJoinedByString:@"\n"];
@@ -210,6 +209,46 @@
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
     [alert addAction:ok];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+#pragma Social Media methods
+
+- (IBAction)postQuestionToFacebook:(id)sender {
+    
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        SLComposeViewController *facebookSLCVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        NSArray *questionDetails = @[
+                                     @"This question was asked on the TutorMe iOS app.",
+                                     @"Question:",
+                                     self.descTextView.text,
+                                     @"Additional Details:",
+                                     self.detailsTextView.text
+                                     ];
+        [facebookSLCVC setInitialText:[questionDetails componentsJoinedByString:@"\n"]];
+        [self presentViewController:facebookSLCVC animated:YES completion:nil];
+    } else {
+        [self alert:@"ERROR" message:@"Facebook service is not available"];
+    }
+    
+}
+
+- (IBAction)postQuestionToTwitter:(id)sender {
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        SLComposeViewController *twitterSLCVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        NSArray *questionDetails = @[
+                                     @"This question was asked on the TutorMe iOS app.",
+                                     @"Question:",
+                                     self.descTextView.text,
+                                     @"Additional Details:",
+                                     self.detailsTextView.text
+                                     ];
+        [twitterSLCVC setInitialText:[questionDetails componentsJoinedByString:@"\n"]];
+        [self presentViewController:twitterSLCVC animated:YES completion:nil];
+    } else {
+        [self alert:@"ERROR" message:@"Twitter service is not available"];
+    }
 }
 
 
