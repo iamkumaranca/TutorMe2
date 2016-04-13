@@ -15,6 +15,9 @@
     IBOutlet UITextView *detailsTextView;
     IBOutlet UILabel *submittedByLbl;
     IBOutlet UILabel *dateSubmittedLbl;
+    IBOutlet UITextView *ansTextView;
+    IBOutlet UIActivityIndicatorView  *activity;
+    UIGestureRecognizer *tapper;
     NSString *qid;
 }
 
@@ -22,6 +25,9 @@
 @property (strong, nonatomic) IBOutlet UITextView *detailsTextView;
 @property (strong, nonatomic) IBOutlet UILabel *submittedByLbl;
 @property (strong, nonatomic) IBOutlet UILabel *dateSubmittedLbl;
+@property (strong, nonatomic) IBOutlet UITextView *ansTextView;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView  *activity;
+@property (strong, nonatomic) UIGestureRecognizer *tapper;
 @property (strong, nonatomic) NSString *qid;
 
 @end
