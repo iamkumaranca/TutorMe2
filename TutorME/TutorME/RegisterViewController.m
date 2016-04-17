@@ -15,7 +15,7 @@
 @end
 
 @implementation RegisterViewController
-@synthesize fnameField, lnameField, schoolField, programField, yearSegCtrl, emailField, passwordField, confirmField, registration, activity;
+@synthesize fnameField, lnameField, schoolField, programField, yearSegCtrl, emailField, passwordField, confirmField, registration, activity, personIcon, schoolIcon, registerIcon;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,6 +26,43 @@
     // Initialize Activity Indicator
     [self.activity setHidden:YES];
     [self.activity stopAnimating];
+    
+    [personIcon setFont:[UIFont fontWithName:@"FontAwesome" size:17]];
+    [personIcon setText:[NSString stringWithUTF8String:"\uF007"]];
+    
+    [schoolIcon setFont:[UIFont fontWithName:@"FontAwesome" size:17]];
+    [schoolIcon setText:[NSString stringWithUTF8String:"\uF19D"]];
+    
+    [registerIcon setFont:[UIFont fontWithName:@"FontAwesome" size:17]];
+    [registerIcon setText:[NSString stringWithUTF8String:"\uF084"]];
+    
+    fnameField.layer.borderColor=[[UIColor redColor]CGColor];
+    fnameField.layer.borderWidth=1.0;
+    fnameField.layer.cornerRadius=5;
+    
+    lnameField.layer.borderColor=[[UIColor redColor]CGColor];
+    lnameField.layer.borderWidth=1.0;
+    lnameField.layer.cornerRadius=5;
+    
+    schoolField.layer.borderColor=[[UIColor redColor]CGColor];
+    schoolField.layer.borderWidth=1.0;
+    schoolField.layer.cornerRadius=5;
+    
+    programField.layer.borderColor=[[UIColor redColor]CGColor];
+    programField.layer.borderWidth=1.0;
+    programField.layer.cornerRadius=5;
+    
+    emailField.layer.borderColor=[[UIColor redColor]CGColor];
+    emailField.layer.borderWidth=1.0;
+    emailField.layer.cornerRadius=5;
+    
+    passwordField.layer.borderColor=[[UIColor redColor]CGColor];
+    passwordField.layer.borderWidth=1.0;
+    passwordField.layer.cornerRadius=5;
+    
+    confirmField.layer.borderColor=[[UIColor redColor]CGColor];
+    confirmField.layer.borderWidth=1.0;
+    confirmField.layer.cornerRadius=5;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -22,6 +22,9 @@
     IBOutlet UITextField *confirmField;
     Registration *registration;
     IBOutlet UIActivityIndicatorView *activity;
+    IBOutlet UILabel *personIcon;
+    IBOutlet UILabel *schoolIcon;
+    IBOutlet UILabel *registerIcon;
 }
 
 @property (strong, nonatomic) IBOutlet UITextField *fnameField;
@@ -34,5 +37,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *confirmField;
 @property (strong, nonatomic) Registration *registration;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activity;
+@property (strong, nonatomic) IBOutlet UILabel *personIcon;
+@property (strong, nonatomic) IBOutlet UILabel *schoolIcon;
+@property (strong, nonatomic) IBOutlet UILabel *registerIcon;
 
 @end
