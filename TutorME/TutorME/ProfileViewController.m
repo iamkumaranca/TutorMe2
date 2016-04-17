@@ -14,7 +14,7 @@
 @end
 
 @implementation ProfileViewController
-@synthesize fnameLbl, lnameLbl, schoolLbl, programLbl, yearLbl, scoreLbl;
+@synthesize fnameLbl, lnameLbl, schoolLbl, programLbl, yearLbl, scoreLbl, editIcon;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,6 +34,9 @@
         yearLbl.text = snapshot.value[@"year"];
         scoreLbl.text = [snapshot.value[@"score"] stringValue];
     }];
+    
+    [editIcon setFont:[UIFont fontWithName:@"FontAwesome" size:17]];
+    [editIcon setText:[NSString stringWithUTF8String:"\uF044"]];
 }
 
 - (void)didReceiveMemoryWarning {
