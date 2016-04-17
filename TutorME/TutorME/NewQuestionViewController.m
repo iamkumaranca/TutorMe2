@@ -20,7 +20,7 @@
 @end
 
 @implementation NewQuestionViewController
-@synthesize descTextField, detailsTextView, nq, activity, tapper;
+@synthesize descTextField, detailsTextView, nq, activity, tapper, editIcon, editIcon2;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,6 +39,22 @@
               initWithTarget:self action:@selector(handleSingleTap:)];
     tapper.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tapper];
+    
+    //[editIcon setFont:[UIFont fontWithName:@"FontAwesome" size:17]];
+    editIcon.titleLabel.font = [UIFont fontWithName:@"FontAwesome" size:17];
+    [editIcon setTitle:@"\uF12D" forState:UIControlStateNormal];
+    
+    editIcon2.titleLabel.font = [UIFont fontWithName:@"FontAwesome" size:17];
+    [editIcon2 setTitle:@"\uF12D" forState:UIControlStateNormal];
+    
+    descTextField.layer.borderColor=[[UIColor redColor]CGColor];
+    descTextField.layer.borderWidth=1.0;
+    descTextField.layer.cornerRadius=5;
+    
+    detailsTextView.layer.borderColor=[[UIColor redColor]CGColor];
+    detailsTextView.layer.borderWidth=1.0;
+    detailsTextView.layer.cornerRadius=5;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
