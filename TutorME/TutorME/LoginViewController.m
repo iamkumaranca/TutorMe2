@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "AppDelegate.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface LoginViewController ()
 @property (strong, nonatomic) Firebase *ref;
@@ -25,6 +26,15 @@
     // Initialize Activity Indicator
     [self.activity setHidden:YES];
     [self.activity stopAnimating];
+    
+    emailField.layer.borderColor=[[UIColor redColor]CGColor];
+    emailField.layer.borderWidth=1.0;
+    emailField.layer.cornerRadius=5;
+    
+    passwordField.layer.borderColor=[[UIColor redColor]CGColor];
+    passwordField.layer.borderWidth=1.0;
+    passwordField.layer.cornerRadius=5;
+
 }
 
 - (void)didReceiveMemoryWarning {
