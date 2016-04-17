@@ -28,6 +28,7 @@
 		67D94DC51CB214F800D84C7C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D94DC41CB214F800D84C7C /* LoginViewController.m */; };
 		67D94DC81CB2150900D84C7C /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D94DC71CB2150900D84C7C /* RegisterViewController.m */; };
 		67F8329E1CB48253004C5811 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F8329D1CB48253004C5811 /* HomeTableViewCell.m */; };
+		EAE2F3F31CC3F91D00F8562D /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAE2F3F21CC3F91D00F8562D /* fontawesome-webfont.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		67F8329D1CB48253004C5811 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		9F6547F4747890712863D55B /* Pods-TutorME.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorME.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TutorME/Pods-TutorME.debug.xcconfig"; sourceTree = "<group>"; };
 		C0410AC47C29B98E157F9238 /* Pods-TutorME.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorME.release.xcconfig"; path = "Pods/Target Support Files/Pods-TutorME/Pods-TutorME.release.xcconfig"; sourceTree = "<group>"; };
+		EAE2F3F21CC3F91D00F8562D /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		67D94D671CB1AD9100D84C7C = {
 			isa = PBXGroup;
 			children = (
+				EAE2F3F21CC3F91D00F8562D /* fontawesome-webfont.ttf */,
 				67D94D721CB1AD9100D84C7C /* TutorME */,
 				67D94D711CB1AD9100D84C7C /* Products */,
 				B75F816998B07CE3E5263482 /* Pods */,
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67D94D831CB1AD9100D84C7C /* LaunchScreen.storyboard in Resources */,
+				EAE2F3F31CC3F91D00F8562D /* fontawesome-webfont.ttf in Resources */,
 				67D94D801CB1AD9100D84C7C /* Assets.xcassets in Resources */,
 				67D94D7E1CB1AD9100D84C7C /* Main.storyboard in Resources */,
 			);
