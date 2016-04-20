@@ -14,11 +14,11 @@
 {
     IBOutlet UITextField *descTextField;
     IBOutlet UITextView *detailsTextView;
+    IBOutlet UIButton *clearBtn;
+    IBOutlet UIButton *submitBtn;
     NewQuestion *nq;
     IBOutlet UIActivityIndicatorView *activity;
     UIGestureRecognizer *tapper;
-    IBOutlet UIButton *editIcon;
-    IBOutlet UIButton *editIcon2;
 }
 
 @property (strong, nonatomic) IBOutlet UITextField *descTextField;
@@ -26,7 +26,7 @@
 @property (strong, nonatomic) NewQuestion *nq;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activity;
 @property (strong, nonatomic) UIGestureRecognizer *tapper;
-@property (strong, nonatomic) IBOutlet UIButton *editIcon;
-@property (strong, nonatomic) IBOutlet UIButton *editIcon2;
+@property (strong, nonatomic) IBOutlet UIButton *clearBtn;
+@property (strong, nonatomic) IBOutlet UIButton *submitBtn;
 
 @end

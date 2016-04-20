@@ -20,7 +20,7 @@
 @end
 
 @implementation NewQuestionViewController
-@synthesize descTextField, detailsTextView, nq, activity, tapper, editIcon, editIcon2;
+@synthesize descTextField, detailsTextView, nq, activity, tapper, clearBtn, submitBtn;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,21 +40,21 @@
     tapper.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tapper];
     
-    //[editIcon setFont:[UIFont fontWithName:@"FontAwesome" size:17]];
-    editIcon.titleLabel.font = [UIFont fontWithName:@"FontAwesome" size:17];
-    [editIcon setTitle:@"\uF12D" forState:UIControlStateNormal];
+    descTextField.layer.borderColor = [[UIColor redColor]CGColor];
+    descTextField.layer.borderWidth = 2.0;
+    descTextField.layer.cornerRadius = 5;
     
-    editIcon2.titleLabel.font = [UIFont fontWithName:@"FontAwesome" size:17];
-    [editIcon2 setTitle:@"\uF12D" forState:UIControlStateNormal];
+    detailsTextView.layer.borderColor = [[UIColor redColor]CGColor];
+    detailsTextView.layer.borderWidth = 2.0;
+    detailsTextView.layer.cornerRadius = 5;
     
-    descTextField.layer.borderColor=[[UIColor redColor]CGColor];
-    descTextField.layer.borderWidth=1.0;
-    descTextField.layer.cornerRadius=5;
+    clearBtn.layer.borderColor = [[UIColor blackColor]CGColor];
+    clearBtn.layer.borderWidth = 2.0;
+    clearBtn.layer.cornerRadius = 5;
     
-    detailsTextView.layer.borderColor=[[UIColor redColor]CGColor];
-    detailsTextView.layer.borderWidth=1.0;
-    detailsTextView.layer.cornerRadius=5;
-    
+    submitBtn.layer.borderColor = [[UIColor blackColor]CGColor];
+    submitBtn.layer.borderWidth = 2.0;
+    submitBtn.layer.cornerRadius = 5;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -81,17 +81,25 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)clearDesc:(id)sender {
-    descTextField.text = @"";
-}
-
-- (IBAction)clearDetails:(id)sender {
-    detailsTextView.text = @"";
-}
-
 - (IBAction)clearBoth:(id)sender {
     descTextField.text = @"";
     detailsTextView.text = @"";
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if (textField.text.length >= MAX_LENGTH_140 && range.length == 0) {
+        return NO; // Change not allowed
+    } else {
+        return YES; // Change allowed
+    }
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if (textView.text.length >= MAX_LENGTH_255 && range.length == 0) {
+        return NO; // Change not allowed
+    } else {
+        return YES; // Change allowed
+    }
 }
 
 - (IBAction)submit:(id)sender {
