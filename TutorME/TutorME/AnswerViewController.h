@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AnswerViewController : UIViewController
+@interface AnswerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     NSMutableArray *ansList;
 }
