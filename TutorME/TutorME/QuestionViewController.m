@@ -129,6 +129,13 @@
     [self.view endEditing:YES];
 }
 
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if (textView.text.length >= MAX_LENGTH_255 && range.length == 0) {
+        return NO; // Change not allowed
+    } else {
+        return YES; // Change allowed
+    }
+}
 
 - (IBAction)post:(id)sender {
     NSString *msg = @"";
