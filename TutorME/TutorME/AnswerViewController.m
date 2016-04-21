@@ -17,7 +17,7 @@
 @end
 
 @implementation AnswerViewController
-@synthesize ansTableView, ansList, qid;
+@synthesize ansTableView, ansList, nameList, dateList, qid;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,6 +28,8 @@
     
     // Initialize Array
     self.ansList = [[NSMutableArray alloc] init];
+    self.nameList = [[NSMutableArray alloc] init];
+    self.dateList = [[NSMutableArray alloc] init];
     
     // Iniatilize navigation bar
     [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
@@ -42,6 +44,8 @@
     [super viewDidDisappear:animated];
     
     [self.ansList removeAllObjects];
+    [self.nameList removeAllObjects];
+    [self.dateList removeAllObjects];
     
     [self.aref removeObserverWithHandle:self.ahandle];
 }
@@ -54,10 +58,10 @@
         
         if (asnapshot.value != [NSNull null]) {
             if ([asnapshot.value[@"question_id"] isEqualToString:self.qid]) {
-                NSString *details = asnapshot.value[@"details"];
-                NSString *submittedBy = asnapshot.value[@"submitted_by_name"];
-                NSString *submissionDate = asnapshot.value[@"submission_date"];
-                [self.ansList insertObject:[details stringByAppendingFormat:@" [%@ %@]", submittedBy, submissionDate] atIndex:0];
+                
+                [self.ansList insertObject:asnapshot.value[@"details"] atIndex:0];
+                [self.nameList insertObject:asnapshot.value[@"submitted_by_name"] atIndex:0];
+                [self.dateList insertObject:asnapshot.value[@"submission_date"] atIndex:0];
             }
         }
         
@@ -74,7 +78,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
+    return 105;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -87,7 +91,9 @@
     }
     
     NSInteger row = indexPath.row;
-    cell.ansTextView.text = [self.ansList objectAtIndex:row];
+    cell.ansLbl.text = [self.ansList objectAtIndex:row];
+    cell.nameLbl.text = [@"Submitted by: " stringByAppendingString:[self.nameList objectAtIndex:row]];
+    cell.dateLbl.text = [@"Date Submitted: " stringByAppendingString:[self.dateList objectAtIndex:row]];
     
     return cell;
 }

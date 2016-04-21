@@ -9,21 +9,35 @@
 #import "AnswerTableViewCell.h"
 
 @implementation AnswerTableViewCell
-@synthesize ansTextView;
+@synthesize ansLbl, nameLbl, dateLbl;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
     if (self) {
         
-        ansTextView = [[UITextView alloc] init];
+        ansLbl = [[UILabel alloc] init];
+        nameLbl = [[UILabel alloc] init];
+        dateLbl = [[UILabel alloc] init];
         
-        ansTextView.editable = NO;
-        ansTextView.textAlignment = NSTextAlignmentLeft;
-        ansTextView.textColor = [UIColor blackColor];
-        ansTextView.font = [UIFont fontWithName:@"GillSans" size:14.0f];
+        ansLbl.textAlignment = NSTextAlignmentLeft;
+        ansLbl.textColor = [UIColor blackColor];
+        ansLbl.font = [UIFont fontWithName:@"GillSans" size:14.0f];
+        ansLbl.lineBreakMode = NSLineBreakByWordWrapping;
+        ansLbl.numberOfLines = 0;
+        [ansLbl sizeToFit];
         
-        [self.contentView addSubview:ansTextView];
+        nameLbl.textAlignment = NSTextAlignmentRight;
+        nameLbl.textColor = [UIColor grayColor];
+        nameLbl.font = [UIFont fontWithName:@"GillSans-Italic" size:12.0f];
+        
+        dateLbl.textAlignment = NSTextAlignmentRight;
+        dateLbl.textColor = [UIColor grayColor];
+        dateLbl.font = [UIFont fontWithName:@"GillSans-Italic" size:12.0f];
+        
+        [self.contentView addSubview:ansLbl];
+        [self.contentView addSubview:nameLbl];
+        [self.contentView addSubview:dateLbl];
     }
     
     return self;
@@ -34,8 +48,14 @@
     
     CGRect frame;
     
-    frame = CGRectMake(0, 0, 320, 60);
-    ansTextView.frame = frame;
+    frame = CGRectMake(20, 5, 270, 60);
+    ansLbl.frame = frame;
+    
+    frame = CGRectMake(20, 70, 270, 15);
+    nameLbl.frame = frame;
+    
+    frame = CGRectMake(20, 85, 270, 15);
+    dateLbl.frame = frame;
 }
 
 - (void)awakeFromNib {

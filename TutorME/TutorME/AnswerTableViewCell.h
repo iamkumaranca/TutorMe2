@@ -10,9 +10,13 @@
 
 @interface AnswerTableViewCell : UITableViewCell
 {
-    UITextView *ansTextView;
+    UILabel *ansLbl;
+    UILabel *nameLbl;
+    UILabel *dateLbl;
 }
 
-@property (strong, nonatomic) UITextView *ansTextView;
+@property (strong, nonatomic) UILabel *ansLbl;
+@property (strong, nonatomic) UILabel *nameLbl;
+@property (strong, nonatomic) UILabel *dateLbl;
 
 @end

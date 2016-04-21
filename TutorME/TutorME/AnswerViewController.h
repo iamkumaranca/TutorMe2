@@ -12,9 +12,13 @@
 {
     IBOutlet UITableView *ansTableView;
     NSMutableArray *ansList;
+    NSMutableArray *nameList;
+    NSMutableArray *dateList;
     NSString *qid;
 }
 @property (strong, nonatomic) IBOutlet UITableView *ansTableView;
 @property (strong, nonatomic) NSMutableArray *ansList;
+@property (strong, nonatomic) NSMutableArray *nameList;
+@property (strong, nonatomic) NSMutableArray *dateList;
 @property (strong, nonatomic) NSString *qid;
 @end
