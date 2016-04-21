@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuestionTableViewCell : UITableViewCell
+@interface AnswerTableViewCell : UITableViewCell
 {
     UITextView *ansTextView;
 }

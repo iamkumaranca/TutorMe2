@@ -7,7 +7,7 @@
 //
 
 #import "AnswerViewController.h"
-#import "QuestionTableViewCell.h"
+#import "AnswerTableViewCell.h"
 #import "AppDelegate.h"
 
 @interface AnswerViewController ()
@@ -80,10 +80,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *cellId = @"cell";
     
-    QuestionTableViewCell *cell = (QuestionTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellId];
+    AnswerTableViewCell *cell = (AnswerTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellId];
     
     if (cell == nil) {
-        cell = [[QuestionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        cell = [[AnswerTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     
     NSInteger row = indexPath.row;

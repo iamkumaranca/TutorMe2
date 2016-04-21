@@ -6,9 +6,9 @@
 //  Copyright © 2016 kmayo. All rights reserved.
 //
 
-#import "QuestionTableViewCell.h"
+#import "AnswerTableViewCell.h"
 
-@implementation QuestionTableViewCell
+@implementation AnswerTableViewCell
 @synthesize ansTextView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
