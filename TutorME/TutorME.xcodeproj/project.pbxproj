@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		385D869403DC03AB35B0BFA1 /* libPods-TutorME.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4498332D6A341D3D23543A84 /* libPods-TutorME.a */; };
+		6708D57C1CC947EB00368633 /* AnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6708D57B1CC947EB00368633 /* AnswerViewController.m */; };
 		6742C2D31CBDF02F00563083 /* QuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6742C2D21CBDF02F00563083 /* QuestionTableViewCell.m */; };
 		6750B48C1CBEB88000A5D0B1 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6750B48B1CBEB88000A5D0B1 /* Social.framework */; };
 		6788EED51CBD70D7007B4070 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6788EED41CBD70D7007B4070 /* QuestionViewController.m */; };
@@ -29,11 +30,16 @@
 		67D94DC81CB2150900D84C7C /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67D94DC71CB2150900D84C7C /* RegisterViewController.m */; };
 		67F8329E1CB48253004C5811 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F8329D1CB48253004C5811 /* HomeTableViewCell.m */; };
 		AE5599061CC462B300562A5A /* PageFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5599051CC462B300562A5A /* PageFViewController.m */; };
+		AE5599091CC940A100562A5A /* PageTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5599081CC940A100562A5A /* PageTViewController.m */; };
+		AE55990C1CC940B200562A5A /* PageIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE55990B1CC940B200562A5A /* PageIViewController.m */; };
+		AE55990F1CC940C300562A5A /* PageGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE55990E1CC940C300562A5A /* PageGViewController.m */; };
 		EAE2F3F31CC3F91D00F8562D /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAE2F3F21CC3F91D00F8562D /* fontawesome-webfont.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4498332D6A341D3D23543A84 /* libPods-TutorME.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TutorME.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6708D57A1CC947EB00368633 /* AnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerViewController.h; sourceTree = "<group>"; };
+		6708D57B1CC947EB00368633 /* AnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerViewController.m; sourceTree = "<group>"; };
 		6742C2D11CBDF02F00563083 /* QuestionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionTableViewCell.h; sourceTree = "<group>"; };
 		6742C2D21CBDF02F00563083 /* QuestionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionTableViewCell.m; sourceTree = "<group>"; };
 		6750B48B1CBEB88000A5D0B1 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -74,6 +80,12 @@
 		9F6547F4747890712863D55B /* Pods-TutorME.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorME.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TutorME/Pods-TutorME.debug.xcconfig"; sourceTree = "<group>"; };
 		AE5599041CC462B300562A5A /* PageFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageFViewController.h; sourceTree = "<group>"; };
 		AE5599051CC462B300562A5A /* PageFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageFViewController.m; sourceTree = "<group>"; };
+		AE5599071CC940A100562A5A /* PageTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageTViewController.h; sourceTree = "<group>"; };
+		AE5599081CC940A100562A5A /* PageTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageTViewController.m; sourceTree = "<group>"; };
+		AE55990A1CC940B200562A5A /* PageIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageIViewController.h; sourceTree = "<group>"; };
+		AE55990B1CC940B200562A5A /* PageIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageIViewController.m; sourceTree = "<group>"; };
+		AE55990D1CC940C300562A5A /* PageGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageGViewController.h; sourceTree = "<group>"; };
+		AE55990E1CC940C300562A5A /* PageGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageGViewController.m; sourceTree = "<group>"; };
 		C0410AC47C29B98E157F9238 /* Pods-TutorME.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorME.release.xcconfig"; path = "Pods/Target Support Files/Pods-TutorME/Pods-TutorME.release.xcconfig"; sourceTree = "<group>"; };
 		EAE2F3F21CC3F91D00F8562D /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +203,14 @@
 				6788EED41CBD70D7007B4070 /* QuestionViewController.m */,
 				AE5599041CC462B300562A5A /* PageFViewController.h */,
 				AE5599051CC462B300562A5A /* PageFViewController.m */,
+				6708D57A1CC947EB00368633 /* AnswerViewController.h */,
+				6708D57B1CC947EB00368633 /* AnswerViewController.m */,
+				AE5599071CC940A100562A5A /* PageTViewController.h */,
+				AE5599081CC940A100562A5A /* PageTViewController.m */,
+				AE55990A1CC940B200562A5A /* PageIViewController.h */,
+				AE55990B1CC940B200562A5A /* PageIViewController.m */,
+				AE55990D1CC940C300562A5A /* PageGViewController.h */,
+				AE55990E1CC940C300562A5A /* PageGViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -336,12 +356,16 @@
 				67CAC6C81CB430C500963337 /* ScoreTableViewCell.m in Sources */,
 				67A7A44C1CB31AB800C3C21C /* Login.m in Sources */,
 				67D94DC21CB20E4100D84C7C /* AboutViewController.m in Sources */,
+				AE5599091CC940A100562A5A /* PageTViewController.m in Sources */,
 				67D94D781CB1AD9100D84C7C /* AppDelegate.m in Sources */,
 				AE5599061CC462B300562A5A /* PageFViewController.m in Sources */,
 				6788EED51CBD70D7007B4070 /* QuestionViewController.m in Sources */,
 				67D94D751CB1AD9100D84C7C /* main.m in Sources */,
+				AE55990F1CC940C300562A5A /* PageGViewController.m in Sources */,
+				AE55990C1CC940B200562A5A /* PageIViewController.m in Sources */,
 				6742C2D31CBDF02F00563083 /* QuestionTableViewCell.m in Sources */,
 				67A7A4241CB2EBB700C3C21C /* HomeViewController.m in Sources */,
+				6708D57C1CC947EB00368633 /* AnswerViewController.m in Sources */,
 				67CAC6C01CB3579300963337 /* Registration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

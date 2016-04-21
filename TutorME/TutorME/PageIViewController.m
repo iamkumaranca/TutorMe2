@@ -1,18 +1,18 @@
 //
-//  PageFViewController.m
+//  PageIViewController.m
 //  TutorME
 //
-//  Created by iOS Xcode User on 2016-04-17.
+//  Created by iOS Xcode User on 2016-04-21.
 //  Copyright © 2016 kmayo. All rights reserved.
 //
 
-#import "PageFViewController.h"
+#import "PageIViewController.h"
 
-@interface PageFViewController ()
+@interface PageIViewController ()
 
 @end
 
-@implementation PageFViewController
+@implementation PageIViewController
 @synthesize wbPage, activity;
 
 -(void)webViewDidStartLoad:(UIWebView *)webView{
@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSURL *urlAddress = [NSURL URLWithString:@"https://www.facebook.com"];
+    NSURL *urlAddress = [NSURL URLWithString:@"https://www.instagram.com"];
     NSURLRequest *url = [NSURLRequest requestWithURL:urlAddress];
     [wbPage loadRequest:url];
 }

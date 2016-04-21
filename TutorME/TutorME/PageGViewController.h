@@ -1,14 +1,14 @@
 //
-//  PageFViewController.h
+//  PageGViewController.h
 //  TutorME
 //
-//  Created by iOS Xcode User on 2016-04-17.
+//  Created by iOS Xcode User on 2016-04-21.
 //  Copyright © 2016 kmayo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface PageFViewController : UIViewController<UIWebViewDelegate>{
+@interface PageGViewController : UIViewController<UIWebViewDelegate>{
     IBOutlet UIWebView *wbPage;
     IBOutlet UIActivityIndicatorView *activity;
 }

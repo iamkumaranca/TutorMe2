@@ -10,24 +10,24 @@
 #import <Firebase/Firebase.h>
 #import <Social/Social.h>
 
-@interface QuestionViewController : UIViewController <UITextViewDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface QuestionViewController : UITableViewController <UITextViewDelegate>
 {
-    IBOutlet UITextView *descTextView;
-    IBOutlet UITextView *detailsTextView;
+    IBOutlet UITextView *questionTextView;
     IBOutlet UITextView *ansTextView;
-    IBOutlet UIActivityIndicatorView  *activity;
-    IBOutlet UITableView *ansTableView;
-    NSMutableArray *ansList;
+    IBOutlet UIButton *viewBtn;
+    IBOutlet UIButton *clearBtn;
+    IBOutlet UIButton *submitBtn;
+    IBOutlet UIActivityIndicatorView *activity;
     UIGestureRecognizer *tapper;
     NSString *qid;
 }
 
-@property (strong, nonatomic) IBOutlet UITextView *descTextView;
-@property (strong, nonatomic) IBOutlet UITextView *detailsTextView;
+@property (strong, nonatomic) IBOutlet UITextView *questionTextView;
 @property (strong, nonatomic) IBOutlet UITextView *ansTextView;
-@property (strong, nonatomic) IBOutlet UIActivityIndicatorView  *activity;
-@property (strong, nonatomic) IBOutlet UITableView *ansTableView;
-@property (strong, nonatomic) NSMutableArray *ansList;
+@property (strong, nonatomic) IBOutlet UIButton *viewBtn;
+@property (strong, nonatomic) IBOutlet UIButton *clearBtn;
+@property (strong, nonatomic) IBOutlet UIButton *submitBtn;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activity;
 @property (strong, nonatomic) UIGestureRecognizer *tapper;
 @property (strong, nonatomic) NSString *qid;
 
