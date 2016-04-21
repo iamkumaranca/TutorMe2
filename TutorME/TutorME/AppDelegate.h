@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoginViewController.h"
+#import "RegisterViewController.h"
+#import "AboutViewController.h"
 
 #define MAX_LENGTH_50 50
 #define MAX_LENGTH_255 255
@@ -19,6 +22,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) LoginViewController *loginVC;
 
 @end
 

@@ -7,7 +7,6 @@
 //
 
 #import "QuestionViewController.h"
-#import "QuestionTableViewCell.h"
 #import "AppDelegate.h"
 
 @interface QuestionViewController ()
@@ -23,7 +22,7 @@
 @end
 
 @implementation QuestionViewController
-@synthesize descTextView, detailsTextView, ansTextView, activity, ansTableView, ansList, tapper, qid;
+@synthesize questionTextView, ansTextView, viewBtn, clearBtn, submitBtn, activity, tapper, qid;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,21 +40,36 @@
     tapper.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tapper];
     
-    // Initialize Array
-    self.ansList = [[NSMutableArray alloc] init];
+
+    // Initialize Border
+    questionTextView.layer.borderColor = [[UIColor grayColor]CGColor];
+    questionTextView.layer.borderWidth = 2.0;
     
+    ansTextView.layer.borderColor = [[UIColor grayColor]CGColor];
+    ansTextView.layer.borderWidth = 2.0;
+    
+    viewBtn.layer.borderColor = [[UIColor blackColor]CGColor];
+    viewBtn.layer.borderWidth = 2.0;
+    viewBtn.layer.cornerRadius = 5;
+    
+    clearBtn.layer.borderColor = [[UIColor blackColor]CGColor];
+    clearBtn.layer.borderWidth = 2.0;
+    clearBtn.layer.cornerRadius = 5;
+    
+    submitBtn.layer.borderColor = [[UIColor blackColor]CGColor];
+    submitBtn.layer.borderWidth = 2.0;
+    submitBtn.layer.cornerRadius = 5;
+    
+    //
+    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
+    [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{
+                                                                      NSForegroundColorAttributeName:[UIColor whiteColor],
+                                                                      NSFontAttributeName:[UIFont fontWithName:@"GillSans-Bold" size:20.0]
+                                                                      }];
     // Initialize Activity Indicator
     [self.activity setHidden:YES];
     [self.activity stopAnimating];
-    
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    
-    [self.ansList removeAllObjects];
-    
-    [self.aref removeObserverWithHandle:self.ahandle];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -63,15 +77,14 @@
     
     // Retrieve question - description, details, submitted by, and submission date
     [self.qref observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *qsnapshot) {
-        self.descTextView.text = qsnapshot.value[@"description"];
         
         NSArray *qdetails = @[
+                              qsnapshot.value[@"description"],
                               qsnapshot.value[@"details"],
-                              [@"Asked by: " stringByAppendingString:qsnapshot.value[@"submitted_by_name"]],
-                              [@"Asked on: " stringByAppendingString:qsnapshot.value[@"submission_date"]]
+                              [@"Asked by " stringByAppendingFormat:@"%@\nOn %@", qsnapshot.value[@"submitted_by_name"], qsnapshot.value[@"submission_date"]]
                               ];
         
-        self.detailsTextView.text = [qdetails componentsJoinedByString:@"\n"];
+        self.questionTextView.text = [qdetails componentsJoinedByString:@"\n\n"];
 
     }];
     
@@ -80,45 +93,9 @@
         self.fname = usnapshot.value[@"first_name"];
         self.lname = usnapshot.value[@"last_name"];
     }];
-    
-    // Retrieve answers list if any
-    self.ahandle = [[self.aref queryOrderedByKey] observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *asnapshot) {
-        
-        if (asnapshot.value != [NSNull null]) {
-            if ([asnapshot.value[@"question_id"] isEqualToString:self.qid]) {
-                NSString *details = asnapshot.value[@"details"];
-                NSString *submittedBy = asnapshot.value[@"submitted_by_name"];
-                NSString *submissionDate = asnapshot.value[@"submission_date"];
-                [self.ansList insertObject:[details stringByAppendingFormat:@" [%@ %@]", submittedBy, submissionDate] atIndex:0];
-            }
-        }
-        
-        [self.ansTableView reloadData];
-    }];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [ansList count];
-}
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *cellId = @"cell";
-    
-    QuestionTableViewCell *cell = (QuestionTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellId];
-    
-    if (cell == nil) {
-        cell = [[QuestionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-    }
-    
-    NSInteger row = indexPath.row;
-    cell.ansTextView.text = [self.ansList objectAtIndex:row];
-    
-    return cell;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -140,6 +117,7 @@
 {
     [self.view endEditing:YES];
 }
+
 
 - (IBAction)post:(id)sender {
     NSString *msg = @"";
@@ -220,12 +198,9 @@
         
         NSArray *questionDetails = @[
                                      @"This question was asked on the TutorMe iOS app.",
-                                     @"Question:",
-                                     self.descTextView.text,
-                                     @"Additional Details:",
-                                     self.detailsTextView.text
+                                     self.questionTextView.text
                                      ];
-        [facebookSLCVC setInitialText:[questionDetails componentsJoinedByString:@"\n"]];
+        [facebookSLCVC setInitialText:[questionDetails componentsJoinedByString:@"\n\n"]];
         [self presentViewController:facebookSLCVC animated:YES completion:nil];
     } else {
         [self alert:@"ERROR" message:@"Facebook service is not available"];
@@ -239,10 +214,7 @@
         
         NSArray *questionDetails = @[
                                      @"This question was asked on the TutorMe iOS app.",
-                                     @"Question:",
-                                     self.descTextView.text,
-                                     @"Additional Details:",
-                                     self.detailsTextView.text
+                                     self.questionTextView.text
                                      ];
         [twitterSLCVC setInitialText:[questionDetails componentsJoinedByString:@"\n"]];
         [self presentViewController:twitterSLCVC animated:YES completion:nil];
