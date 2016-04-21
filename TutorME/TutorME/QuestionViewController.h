@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Firebase/Firebase.h>
 #import <Social/Social.h>
+#import "AnswerViewController.h"
 
 @interface QuestionViewController : UITableViewController <UITextViewDelegate>
 {

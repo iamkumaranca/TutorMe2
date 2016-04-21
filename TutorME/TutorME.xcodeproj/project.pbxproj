@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		385D869403DC03AB35B0BFA1 /* libPods-TutorME.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4498332D6A341D3D23543A84 /* libPods-TutorME.a */; };
 		6708D57C1CC947EB00368633 /* AnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6708D57B1CC947EB00368633 /* AnswerViewController.m */; };
-		6742C2D31CBDF02F00563083 /* QuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6742C2D21CBDF02F00563083 /* QuestionTableViewCell.m */; };
+		6742C2D31CBDF02F00563083 /* AnswerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6742C2D21CBDF02F00563083 /* AnswerTableViewCell.m */; };
 		6750B48C1CBEB88000A5D0B1 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6750B48B1CBEB88000A5D0B1 /* Social.framework */; };
 		6788EED51CBD70D7007B4070 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6788EED41CBD70D7007B4070 /* QuestionViewController.m */; };
 		67A7A4241CB2EBB700C3C21C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A7A4231CB2EBB700C3C21C /* HomeViewController.m */; };
@@ -43,8 +43,8 @@
 		4498332D6A341D3D23543A84 /* libPods-TutorME.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TutorME.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6708D57A1CC947EB00368633 /* AnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerViewController.h; sourceTree = "<group>"; };
 		6708D57B1CC947EB00368633 /* AnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerViewController.m; sourceTree = "<group>"; };
-		6742C2D11CBDF02F00563083 /* QuestionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionTableViewCell.h; sourceTree = "<group>"; };
-		6742C2D21CBDF02F00563083 /* QuestionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionTableViewCell.m; sourceTree = "<group>"; };
+		6742C2D11CBDF02F00563083 /* AnswerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerTableViewCell.h; sourceTree = "<group>"; };
+		6742C2D21CBDF02F00563083 /* AnswerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerTableViewCell.m; sourceTree = "<group>"; };
 		6750B48B1CBEB88000A5D0B1 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		6788EED31CBD70D7007B4070 /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
 		6788EED41CBD70D7007B4070 /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
@@ -176,6 +176,8 @@
 				67CAC6C71CB430C500963337 /* ScoreTableViewCell.m */,
 				67F8329C1CB48253004C5811 /* HomeTableViewCell.h */,
 				67F8329D1CB48253004C5811 /* HomeTableViewCell.m */,
+				6742C2D11CBDF02F00563083 /* AnswerTableViewCell.h */,
+				6742C2D21CBDF02F00563083 /* AnswerTableViewCell.m */,
 				6742C2D11CBDF02F00563083 /* QuestionTableViewCell.h */,
 				6742C2D21CBDF02F00563083 /* QuestionTableViewCell.m */,
 				EA51DEDE1CC9480E00174733 /* Styles.h */,
@@ -379,6 +381,7 @@
 				67D94D751CB1AD9100D84C7C /* main.m in Sources */,
 				AE55990F1CC940C300562A5A /* PageGViewController.m in Sources */,
 				AE55990C1CC940B200562A5A /* PageIViewController.m in Sources */,
+				6742C2D31CBDF02F00563083 /* AnswerTableViewCell.m in Sources */,
 				6742C2D31CBDF02F00563083 /* QuestionTableViewCell.m in Sources */,
 				EA51DEE01CC9480E00174733 /* Styles.m in Sources */,
 				67A7A4241CB2EBB700C3C21C /* HomeViewController.m in Sources */,

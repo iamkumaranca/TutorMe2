@@ -7,7 +7,7 @@
 //
 
 #import "AnswerViewController.h"
-#import "QuestionTableViewCell.h"
+#import "AnswerTableViewCell.h"
 #import "AppDelegate.h"
 
 @interface AnswerViewController ()
@@ -17,7 +17,7 @@
 @end
 
 @implementation AnswerViewController
-@synthesize ansList;
+@synthesize ansTableView, ansList, nameList, dateList, qid;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,17 +28,29 @@
     
     // Initialize Array
     self.ansList = [[NSMutableArray alloc] init];
+    self.nameList = [[NSMutableArray alloc] init];
+    self.dateList = [[NSMutableArray alloc] init];
+    
+    // Iniatilize navigation bar
+    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
+    [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{
+                                                                      NSForegroundColorAttributeName:[UIColor whiteColor],
+                                                                      NSFontAttributeName:[UIFont fontWithName:@"GillSans-Bold" size:20.0]
+                                                                      }];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
     [self.ansList removeAllObjects];
+    [self.nameList removeAllObjects];
+    [self.dateList removeAllObjects];
     
-    //[self.aref removeObserverWithHandle:self.ahandle];
+    [self.aref removeObserverWithHandle:self.ahandle];
 }
 
-/*- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     // Retrieve answers list if any
@@ -46,16 +58,16 @@
         
         if (asnapshot.value != [NSNull null]) {
             if ([asnapshot.value[@"question_id"] isEqualToString:self.qid]) {
-                NSString *details = asnapshot.value[@"details"];
-                NSString *submittedBy = asnapshot.value[@"submitted_by_name"];
-                NSString *submissionDate = asnapshot.value[@"submission_date"];
-                [self.ansList insertObject:[details stringByAppendingFormat:@" [%@ %@]", submittedBy, submissionDate] atIndex:0];
+                
+                [self.ansList insertObject:asnapshot.value[@"details"] atIndex:0];
+                [self.nameList insertObject:asnapshot.value[@"submitted_by_name"] atIndex:0];
+                [self.dateList insertObject:asnapshot.value[@"submission_date"] atIndex:0];
             }
         }
         
         [self.ansTableView reloadData];
     }];
-}*/
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -66,23 +78,46 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
+    return 105;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *cellId = @"cell";
     
-    QuestionTableViewCell *cell = (QuestionTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellId];
+    AnswerTableViewCell *cell = (AnswerTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellId];
     
     if (cell == nil) {
-        cell = [[QuestionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        cell = [[AnswerTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     
     NSInteger row = indexPath.row;
-    cell.ansTextView.text = [self.ansList objectAtIndex:row];
+    cell.ansLbl.text = [self.ansList objectAtIndex:row];
+    cell.nameLbl.text = [@"Submitted by: " stringByAppendingString:[self.nameList objectAtIndex:row]];
+    cell.dateLbl.text = [@"Date Submitted: " stringByAppendingString:[self.dateList objectAtIndex:row]];
     
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSInteger row = indexPath.row;
+    NSArray *ansDetails = @[
+                            [self.ansList objectAtIndex:row],
+                            [@"Asked by " stringByAppendingFormat:@"%@\nOn %@", [self.nameList objectAtIndex:row], [self.dateList objectAtIndex:row]]
+                            ];
+    NSString *msg = [ansDetails componentsJoinedByString:@"\n\n"];
+    [self alert:@"Answer" message:msg];
+}
+
+#pragma mark Alert methods
+- (void)alert:(NSString *)title message:(NSString *)msg {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+#pragma mark Navigation methods
 
 - (IBAction)back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
