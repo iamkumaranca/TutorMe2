@@ -195,6 +195,10 @@
             [self.activity setHidden:YES];
             [self.activity stopAnimating];
             
+            // Success message
+            msg = @"The answer was saved successfully. Thank you.";
+            [self alert:@"SUCCESS" message:msg];
+            
             [self resetAnswer];
         }];
     }
