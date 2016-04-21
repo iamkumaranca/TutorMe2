@@ -1,18 +1,18 @@
 //
-//  PageFViewController.m
+//  PageTViewController.m
 //  TutorME
 //
-//  Created by iOS Xcode User on 2016-04-17.
+//  Created by iOS Xcode User on 2016-04-21.
 //  Copyright © 2016 kmayo. All rights reserved.
 //
 
-#import "PageFViewController.h"
+#import "PageTViewController.h"
 
-@interface PageFViewController ()
+@interface PageTViewController ()
 
 @end
 
-@implementation PageFViewController
+@implementation PageTViewController
 @synthesize wbPage, activity;
 
 -(void)webViewDidStartLoad:(UIWebView *)webView{
@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSURL *urlAddress = [NSURL URLWithString:@"https://www.facebook.com"];
+    NSURL *urlAddress = [NSURL URLWithString:@"https://www.twitter.com"];
     NSURLRequest *url = [NSURLRequest requestWithURL:urlAddress];
     [wbPage loadRequest:url];
 }
