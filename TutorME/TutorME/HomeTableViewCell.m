@@ -9,7 +9,7 @@
 #import "HomeTableViewCell.h"
 
 @implementation HomeTableViewCell
-@synthesize descLbl, nameLbl, dateLbl;
+@synthesize descLbl, detailsLbl, nameLbl, dateLbl;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     
@@ -18,12 +18,20 @@
     if (self) {
         
         descLbl = [[UILabel alloc] init];
+        detailsLbl = [[UILabel alloc] init];
         nameLbl = [[UILabel alloc] init];
         dateLbl = [[UILabel alloc] init];
         
         descLbl.textAlignment = NSTextAlignmentLeft;
         descLbl.textColor = [UIColor blackColor];
         descLbl.font = [UIFont fontWithName:@"GillSans-Bold" size:18.0f];
+        
+        detailsLbl.textAlignment = NSTextAlignmentLeft;
+        detailsLbl.textColor = [UIColor grayColor];
+        detailsLbl.font = [UIFont fontWithName:@"GillSans" size:14.0f];
+        detailsLbl.lineBreakMode = NSLineBreakByWordWrapping;
+        detailsLbl.numberOfLines = 0;
+        [detailsLbl sizeToFit];
         
         nameLbl.textAlignment = NSTextAlignmentRight;
         nameLbl.textColor = [UIColor grayColor];
@@ -34,6 +42,7 @@
         dateLbl.font = [UIFont fontWithName:@"GillSans-Italic" size:12.0f];
         
         [self.contentView addSubview:descLbl];
+        [self.contentView addSubview:detailsLbl];
         [self.contentView addSubview:nameLbl];
         [self.contentView addSubview:dateLbl];
     }
@@ -49,10 +58,13 @@
     frame = CGRectMake(10, 5, 270, 20);
     descLbl.frame = frame;
     
-    frame = CGRectMake(10, 35, 270, 15);
+    frame = CGRectMake(10, 25, 270, 40);
+    detailsLbl.frame = frame;
+    
+    frame = CGRectMake(10, 70, 270, 15);
     nameLbl.frame = frame;
     
-    frame = CGRectMake(10, 50, 270, 15);
+    frame = CGRectMake(10, 85, 270, 15);
     dateLbl.frame = frame;
     
 }

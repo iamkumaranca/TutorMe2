@@ -17,7 +17,7 @@
 @end
 
 @implementation HomeViewController
-@synthesize qidList, descList, nameList, dateList, homeTableView;
+@synthesize qidList, descList, detailsList, nameList, dateList, homeTableView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,8 +30,21 @@
     // Initialize arrays
     self.qidList = [[NSMutableArray alloc] init];
     self.descList = [[NSMutableArray alloc] init];
+    self.detailsList = [[NSMutableArray alloc] init];
     self.nameList = [[NSMutableArray alloc] init];
     self.dateList = [[NSMutableArray alloc] init];
+    
+    // Initialize Tab Bar and Navigation Bar
+    [self.tabBarController.tabBar setBarTintColor:[UIColor redColor]];
+    [self.tabBarController.tabBar setTranslucent:NO];
+    
+    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
+    [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{
+                                                                      NSForegroundColorAttributeName:[UIColor whiteColor],
+                                                                      NSFontAttributeName:[UIFont fontWithName:@"GillSans-Bold" size:20.0]
+                                                                      }];
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -39,6 +52,7 @@
     
     [self.qidList removeAllObjects];
     [self.descList removeAllObjects];
+    [self.detailsList removeAllObjects];
     [self.nameList removeAllObjects];
     [self.dateList removeAllObjects];
 
@@ -54,6 +68,7 @@
         if (qsnapshot.value != [NSNull null]) {
             [self.qidList insertObject:qsnapshot.key atIndex:0];
             [self.descList insertObject:qsnapshot.value[@"description"] atIndex:0];
+            [self.detailsList insertObject:qsnapshot.value[@"details"] atIndex:0];
             [self.nameList insertObject:qsnapshot.value[@"submitted_by_name"] atIndex:0];
             [self.dateList insertObject:qsnapshot.value[@"submission_date"] atIndex:0];
         }
@@ -67,7 +82,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 70;
+    return 105;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -81,6 +96,7 @@
     
     NSInteger row = indexPath.row;
     cell.descLbl.text = [self.descList objectAtIndex:row];
+    cell.detailsLbl.text = [self.detailsList objectAtIndex:row];
     cell.nameLbl.text = [@"Submitted by: " stringByAppendingString:[self.nameList objectAtIndex:row]];
     cell.dateLbl.text = [@"Date Submitted: " stringByAppendingString:[self.dateList objectAtIndex:row]];
     

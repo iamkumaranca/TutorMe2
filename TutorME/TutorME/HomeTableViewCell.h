@@ -11,11 +11,13 @@
 @interface HomeTableViewCell : UITableViewCell
 {
     UILabel *descLbl;
+    UILabel *detailsLbl;
     UILabel *nameLbl;
     UILabel *dateLbl;
 }
 
 @property (strong, nonatomic) UILabel *descLbl;
+@property (strong, nonatomic) UILabel *detailsLbl;
 @property (strong, nonatomic) UILabel *nameLbl;
 @property (strong, nonatomic) UILabel *dateLbl;
 

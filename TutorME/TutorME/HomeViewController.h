@@ -14,6 +14,7 @@
 {
     NSMutableArray *qidList;
     NSMutableArray *descList;
+    NSMutableArray *detailsList;
     NSMutableArray *nameList;
     NSMutableArray *dateList;
     IBOutlet UITableView *homeTableView;
@@ -21,6 +22,7 @@
 
 @property (strong, nonatomic) NSMutableArray *qidList;
 @property (strong, nonatomic) NSMutableArray *descList;
+@property (strong, nonatomic) NSMutableArray *detailsList;
 @property (strong, nonatomic) NSMutableArray *nameList;
 @property (strong, nonatomic) NSMutableArray *dateList;
 @property (strong, nonatomic) IBOutlet UITableView *homeTableView;
