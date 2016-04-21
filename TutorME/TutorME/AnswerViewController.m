@@ -17,7 +17,7 @@
 @end
 
 @implementation AnswerViewController
-@synthesize ansList;
+@synthesize ansTableView, ansList, qid;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,6 +28,14 @@
     
     // Initialize Array
     self.ansList = [[NSMutableArray alloc] init];
+    
+    // Iniatilize navigation bar
+    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
+    [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{
+                                                                      NSForegroundColorAttributeName:[UIColor whiteColor],
+                                                                      NSFontAttributeName:[UIFont fontWithName:@"GillSans-Bold" size:20.0]
+                                                                      }];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -35,10 +43,10 @@
     
     [self.ansList removeAllObjects];
     
-    //[self.aref removeObserverWithHandle:self.ahandle];
+    [self.aref removeObserverWithHandle:self.ahandle];
 }
 
-/*- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     // Retrieve answers list if any
@@ -55,7 +63,7 @@
         
         [self.ansTableView reloadData];
     }];
-}*/
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

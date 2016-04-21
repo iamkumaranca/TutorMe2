@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AnswerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface AnswerViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 {
+    IBOutlet UITableView *ansTableView;
     NSMutableArray *ansList;
+    NSString *qid;
 }
+@property (strong, nonatomic) IBOutlet UITableView *ansTableView;
 @property (strong, nonatomic) NSMutableArray *ansList;
+@property (strong, nonatomic) NSString *qid;
 @end

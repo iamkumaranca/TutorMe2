@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TutorME/QuestionViewController.m"
-            timestampString = "482955355.153902"
+            timestampString = "482965170.226496"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "-post:"
             landmarkType = "5">
          </BreakpointContent>

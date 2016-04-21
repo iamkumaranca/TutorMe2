@@ -60,7 +60,7 @@
     submitBtn.layer.borderWidth = 2.0;
     submitBtn.layer.cornerRadius = 5;
     
-    //
+    // Iniatilize navigation bar
     [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar setTitleTextAttributes:@{
@@ -95,10 +95,21 @@
     }];
 }
 
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (IBAction)viewAnswers:(id)sender {
+    // Go to Question screen (UINavigationController)
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *answerNC = [sb instantiateViewControllerWithIdentifier:@"answerNC"];
+    
+    // Pass the qid to the Question View Controller
+    AnswerViewController *answerVC = (AnswerViewController *)[answerNC topViewController];
+    answerVC.qid = self.qid;
+    
+    [answerNC setModalPresentationStyle:UIModalPresentationFullScreen];
+    [self presentViewController:answerNC animated:YES completion:nil];
 }
 
 - (IBAction)back:(id)sender {
