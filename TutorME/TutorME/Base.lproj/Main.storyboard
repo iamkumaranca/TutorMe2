@@ -9,7 +9,6 @@
             <string>FontAwesome</string>
             <string>FontAwesome</string>
             <string>FontAwesome</string>
-            <string>FontAwesome</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -495,12 +494,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HM6-If-Su9">
-                                                    <rect key="frame" x="270" y="0.0" width="42" height="40"/>
-                                                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Personal Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BE-CX-2aS">
                                                     <rect key="frame" x="8" y="2" width="200" height="40"/>
                                                     <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="17"/>
@@ -684,7 +677,6 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="editIcon" destination="HM6-If-Su9" id="t7l-56-iJX"/>
                         <outlet property="fnameLbl" destination="9hK-dp-hKS" id="fWA-kY-YDo"/>
                         <outlet property="lnameLbl" destination="xBd-KF-VkG" id="VNB-J1-fSJ"/>
                         <outlet property="programLbl" destination="Xua-jy-QHQ" id="MOD-eO-fVW"/>
@@ -1374,6 +1366,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Uk0-IJ-fN7">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="eSw-ev-4P8">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="exit:" destination="udX-Rf-J8L" id="pqi-gr-m0x"/>
                             </connections>
@@ -1646,6 +1639,6 @@
         <image name="score" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9QA-eF-zAJ"/>
+        <segue reference="YMz-iK-8Zz"/>
     </inferredMetricsTieBreakers>
 </document>
