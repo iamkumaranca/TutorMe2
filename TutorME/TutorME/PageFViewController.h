@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PageFViewController : UIViewController{
+@interface PageFViewController : UIViewController<UIWebViewDelegate>{
     IBOutlet UIWebView *wbPage;
     IBOutlet UIActivityIndicatorView *activity;
 }

@@ -15,6 +15,16 @@
 @implementation PageFViewController
 @synthesize wbPage, activity;
 
+-(void)webViewDidStartLoad:(UIWebView *)webView{
+    [activity setHidden:NO];
+    [activity startAnimating];
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
+    [activity setHidden:YES];
+    [activity startAnimating];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
