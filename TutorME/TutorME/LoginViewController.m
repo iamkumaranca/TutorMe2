@@ -8,10 +8,13 @@
 
 #import "LoginViewController.h"
 #import "AppDelegate.h"
-#import <QuartzCore/QuartzCore.h>
+#import "Styles.h"
 
 @interface LoginViewController ()
+
 @property (strong, nonatomic) Firebase *ref;
+@property (strong, nonatomic) Styles *styles;
+
 @end
 
 @implementation LoginViewController
@@ -23,23 +26,20 @@
     // Initialize Firebase reference
     self.ref = [[Firebase alloc] initWithUrl:@"https://burning-heat-7302.firebaseio.com/"];
     
+    // Initialize Styles class
+    self.styles = [[Styles alloc] init];
+    
     // Initialize Activity Indicator
     [self.activity setHidden:YES];
     [self.activity stopAnimating];
     
-    emailField.layer.borderColor = [[UIColor redColor]CGColor];
-    emailField.layer.borderWidth = 2.0;
-    emailField.layer.cornerRadius = 5;
+    // Styling
+    [Styles fieldStyle:emailField];
+    [Styles fieldStyle:passwordField];
+    [Styles buttonStyle:signInBtn];
     
-    passwordField.layer.borderColor = [[UIColor redColor]CGColor];
-    passwordField.layer.borderWidth = 2.0;
-    passwordField.layer.cornerRadius = 5;
-    
-    signInBtn.layer.borderColor = [[UIColor blackColor]CGColor];
-    signInBtn.layer.borderWidth = 2.0;
-    signInBtn.layer.cornerRadius = 5;
-    
-    [self.tabBarController.tabBar setBarTintColor:[UIColor redColor]];
+    [self.tabBarController.tabBar setBarTintColor:[UIColor whiteColor]];
+    [self.tabBarController.tabBar setTintColor:[UIColor redColor]];
     [self.tabBarController.tabBar setTranslucent:NO];
     
     [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];

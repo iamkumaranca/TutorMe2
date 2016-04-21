@@ -17,7 +17,6 @@
     IBOutlet UILabel *programLbl;
     IBOutlet UILabel *yearLbl;
     IBOutlet UILabel *scoreLbl;
-    IBOutlet UILabel *editIcon;
 }
 
 @property (strong, nonatomic) IBOutlet UILabel *fnameLbl;
@@ -26,5 +25,4 @@
 @property (strong, nonatomic) IBOutlet UILabel *programLbl;
 @property (strong, nonatomic) IBOutlet UILabel *yearLbl;
 @property (strong, nonatomic) IBOutlet UILabel *scoreLbl;
-@property (strong, nonatomic) IBOutlet UILabel *editIcon;
 @end
