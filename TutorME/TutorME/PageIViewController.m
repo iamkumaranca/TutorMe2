@@ -13,10 +13,24 @@
 @end
 
 @implementation PageIViewController
+@synthesize wbPage, activity;
+
+-(void)webViewDidStartLoad:(UIWebView *)webView{
+    [activity setHidden:NO];
+    [activity startAnimating];
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
+    [activity setHidden:YES];
+    [activity startAnimating];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSURL *urlAddress = [NSURL URLWithString:@"https://www.instagram.com"];
+    NSURLRequest *url = [NSURLRequest requestWithURL:urlAddress];
+    [wbPage loadRequest:url];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +47,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)exit:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end

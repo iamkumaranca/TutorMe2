@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PageGViewController : UIViewController
+@interface PageGViewController : UIViewController<UIWebViewDelegate>{
+    IBOutlet UIWebView *wbPage;
+    IBOutlet UIActivityIndicatorView *activity;
+}
+
+@property (nonatomic, strong) IBOutlet UIWebView *wbPage;
+@property (nonatomic, strong) IBOutlet UIActivityIndicatorView *activity;
 
 @end
