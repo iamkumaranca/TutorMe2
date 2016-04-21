@@ -8,15 +8,18 @@
 
 #import "NewQuestionViewController.h"
 #import "AppDelegate.h"
+#import "Styles.h"
 
 @interface NewQuestionViewController ()
 @property (strong, nonatomic) Firebase *ref;
 @property (strong, nonatomic) Firebase *qref;
 @property (strong, nonatomic) Firebase *uref;
 @property (strong, nonatomic) Firebase *uscoreref;
+@property (strong, nonatomic) Styles *styles;
 
 @property (strong, nonatomic) NSString *fname;
 @property (strong, nonatomic) NSString *lname;
+
 @end
 
 @implementation NewQuestionViewController
@@ -30,6 +33,9 @@
     self.uref = [self.ref childByAppendingPath:@"users"];
     self.uscoreref = [self.uref childByAppendingPath:[self.ref.authData.uid stringByAppendingString:@"/score"]];
     
+    // Initialize Styles class
+    self.styles = [[Styles alloc] init];
+    
     // Initialize Activity Indicator
     [self.activity setHidden:YES];
     [self.activity stopAnimating];
@@ -40,21 +46,12 @@
     tapper.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tapper];
     
-    descTextField.layer.borderColor = [[UIColor redColor]CGColor];
-    descTextField.layer.borderWidth = 2.0;
-    descTextField.layer.cornerRadius = 5;
-    
-    detailsTextView.layer.borderColor = [[UIColor redColor]CGColor];
-    detailsTextView.layer.borderWidth = 2.0;
-    detailsTextView.layer.cornerRadius = 5;
-    
-    clearBtn.layer.borderColor = [[UIColor blackColor]CGColor];
-    clearBtn.layer.borderWidth = 2.0;
-    clearBtn.layer.cornerRadius = 5;
-    
-    submitBtn.layer.borderColor = [[UIColor blackColor]CGColor];
-    submitBtn.layer.borderWidth = 2.0;
-    submitBtn.layer.cornerRadius = 5;
+    // Styling
+    [Styles fieldStyle:descTextField];
+    [Styles textViewStyle:detailsTextView];
+
+    [Styles buttonStyle:clearBtn];
+    [Styles buttonStyle:submitBtn];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

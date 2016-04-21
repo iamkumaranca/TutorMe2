@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7af-Ez-Aek">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7af-Ez-Aek">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="fontawesome-webfont.ttf">
@@ -455,11 +455,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="TutorMe" id="87H-7V-3Sj">
                         <barButtonItem key="leftBarButtonItem" image="logout" id="O7d-cW-l7Y">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="logout:" destination="qYB-Vb-xcc" id="eqM-gk-him"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="new" id="2Ok-lj-jOO">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="87k-DQ-GNc" kind="presentation" identifier="homeSegue" id="6E1-10-KqU"/>
                             </connections>
@@ -641,7 +643,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="147"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ec7-xu-Tgy">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ec7-xu-Tgy">
                                                     <rect key="frame" x="162" y="47" width="150" height="50"/>
                                                     <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -667,13 +669,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Profile" id="QSg-ly-syO">
                         <barButtonItem key="leftBarButtonItem" image="logout" id="Mft-jF-WXZ">
-                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="logout:" destination="yoz-B1-BC4" id="ChR-nl-STc"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="new" id="8Ae-Fv-zfR">
-                            <color key="tintColor" red="0.90196078430000004" green="0.18039215689999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="87k-DQ-GNc" kind="presentation" identifier="profileSegue" id="YMz-iK-8Zz"/>
                             </connections>
@@ -737,14 +739,20 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMh-d2-lyn">
                                                     <rect key="frame" x="8" y="8" width="50" height="50"/>
-                                                    <state key="normal" title="F"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                    <state key="normal" title="F">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="postQuestionToFacebook:" destination="JS1-G7-jYT" eventType="touchUpInside" id="d2D-f9-Rnx"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jd7-8R-KKB">
                                                     <rect key="frame" x="66" y="8" width="50" height="50"/>
-                                                    <state key="normal" title="T"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                    <state key="normal" title="T">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="postQuestionToTwitter:" destination="JS1-G7-jYT" eventType="touchUpInside" id="62N-0K-ggY"/>
                                                     </connections>
@@ -757,7 +765,7 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="0wn-mc-Oua" kind="presentation" id="gzu-d7-O5v"/>
+                                                        <action selector="viewAnswers:" destination="JS1-G7-jYT" eventType="touchUpInside" id="XUY-d2-xAC"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -824,6 +832,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="TutorMe" id="q1a-lx-Zam">
                         <barButtonItem key="leftBarButtonItem" image="back" id="rMr-EK-hKx">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="back:" destination="JS1-G7-jYT" id="4t4-AV-71c"/>
                             </connections>
@@ -835,47 +844,47 @@
                         <outlet property="activity" destination="HaK-JT-QdA" id="neC-cj-a5L"/>
                         <outlet property="ansTextView" destination="bs8-0u-c1L" id="apX-Ti-xoJ"/>
                         <outlet property="clearBtn" destination="OWm-Lm-qIj" id="Lrs-kV-jBr"/>
+                        <outlet property="facebook" destination="tMh-d2-lyn" id="DbG-cx-Gs0"/>
                         <outlet property="questionTextView" destination="E0U-av-0Ue" id="RdF-1D-jfI"/>
                         <outlet property="submitBtn" destination="EVc-2X-Hkk" id="gbO-TL-9J2"/>
+                        <outlet property="twitter" destination="jd7-8R-KKB" id="43l-Jh-4XK"/>
                         <outlet property="viewBtn" destination="ceI-8h-kEs" id="hXZ-uq-VrR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4M-PY-yx8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2240" y="904"/>
+            <point key="canvasLocation" x="1520" y="2380"/>
         </scene>
         <!--Answers-->
-        <scene sceneID="6Xa-2C-EXp">
+        <scene sceneID="ICL-V5-d30">
             <objects>
-                <viewController id="HJv-7Y-a6Q" customClass="AnswerViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9yX-6E-KMt"/>
-                        <viewControllerLayoutGuide type="bottom" id="3c2-gt-Byv"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="MLa-0y-7Df">
+                <tableViewController id="H5h-M6-pNZ" customClass="AnswerViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="233-JC-uKW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gHe-na-GuF">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Answers" id="VSG-LO-a9x">
-                        <barButtonItem key="leftBarButtonItem" image="back" id="wdf-WB-Okk">
+                        <connections>
+                            <outlet property="dataSource" destination="H5h-M6-pNZ" id="c2u-M7-wLX"/>
+                            <outlet property="delegate" destination="H5h-M6-pNZ" id="uRy-rk-6o6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Answers" id="fM6-ud-6kC">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="aHJ-0s-lGf">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="back:" destination="HJv-7Y-a6Q" id="h6h-sH-tXg"/>
+                                <action selector="back:" destination="H5h-M6-pNZ" id="dWt-wb-G0Z"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3I3-w7-00F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <connections>
+                        <outlet property="ansTableView" destination="233-JC-uKW" id="PBo-YY-tDa"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uva-0O-awb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2638" y="1556"/>
+            <point key="canvasLocation" x="2186" y="3016"/>
         </scene>
         <!--New Question-->
         <scene sceneID="7OC-p5-jVd">
@@ -1020,7 +1029,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="New Question" id="azc-M5-MJi">
                         <barButtonItem key="leftBarButtonItem" image="back" id="sE3-WE-ssv">
-                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="back:" destination="mL2-Wj-YNr" id="ef0-ZN-Riv"/>
                             </connections>
@@ -1055,11 +1064,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Scores" id="A1e-WJ-1Bx">
                         <barButtonItem key="leftBarButtonItem" image="logout" id="3Yo-uR-3Nu">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="logout:" destination="tsu-S5-HV8" id="19v-MZ-W5B"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="new" id="9CX-sg-C11">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="87k-DQ-GNc" kind="presentation" identifier="scoreSegue" id="9QA-eF-zAJ"/>
                             </connections>
@@ -1244,6 +1255,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="eaX-sm-TbI">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="mex-DK-Y0Y">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="exit:" destination="A2e-4t-F8n" id="M6m-Ow-Hxy"/>
                             </connections>
@@ -1287,6 +1299,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="YvM-H0-SdR">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="uae-HM-N6p">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="exit:" destination="qBD-BW-ljc" id="n97-Wf-ytx"/>
                             </connections>
@@ -1330,6 +1343,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="iF0-qF-2Pe">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="cEq-nL-mPA">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="exit:" destination="0ZA-OB-obK" id="WpO-Lv-hLr"/>
                             </connections>
@@ -1399,6 +1413,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="4o6-Ei-17R">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="eNB-Of-SEf">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="exit:" destination="SkR-5q-3tm" id="WwM-XK-vWY"/>
                             </connections>
@@ -1596,27 +1611,27 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H6k-EY-drd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1851" y="904"/>
+            <point key="canvasLocation" x="1131" y="2380"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="NKp-Pm-m0J">
+        <scene sceneID="5kE-lf-KT6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0wn-mc-Oua" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="answerNC" automaticallyAdjustsScrollViewInsets="NO" id="1GK-0C-d8q" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="O0a-X8-5QR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a7a-hV-0TA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="HJv-7Y-a6Q" kind="relationship" relationship="rootViewController" id="owg-Ho-vxv"/>
+                        <segue destination="H5h-M6-pNZ" kind="relationship" relationship="rootViewController" id="ncZ-mk-Icv"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kib-VM-aIY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JKk-yO-R5D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2240" y="1556"/>
+            <point key="canvasLocation" x="1727" y="3016"/>
         </scene>
     </scenes>
     <resources>

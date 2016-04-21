@@ -35,7 +35,8 @@
     self.dateList = [[NSMutableArray alloc] init];
     
     // Initialize Tab Bar and Navigation Bar
-    [self.tabBarController.tabBar setBarTintColor:[UIColor redColor]];
+    [self.tabBarController.tabBar setBarTintColor:[UIColor whiteColor]];
+    [self.tabBarController.tabBar setTintColor:[UIColor redColor]];
     [self.tabBarController.tabBar setTranslucent:NO];
     
     [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];

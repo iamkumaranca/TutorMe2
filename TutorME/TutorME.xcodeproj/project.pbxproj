@@ -35,6 +35,7 @@
 		AE5599091CC940A100562A5A /* PageTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5599081CC940A100562A5A /* PageTViewController.m */; };
 		AE55990C1CC940B200562A5A /* PageIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE55990B1CC940B200562A5A /* PageIViewController.m */; };
 		AE55990F1CC940C300562A5A /* PageGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE55990E1CC940C300562A5A /* PageGViewController.m */; };
+		EA51DEE01CC9480E00174733 /* Styles.m in Sources */ = {isa = PBXBuildFile; fileRef = EA51DEDF1CC9480E00174733 /* Styles.m */; };
 		EAE2F3F31CC3F91D00F8562D /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAE2F3F21CC3F91D00F8562D /* fontawesome-webfont.ttf */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,8 @@
 		AE55990D1CC940C300562A5A /* PageGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageGViewController.h; sourceTree = "<group>"; };
 		AE55990E1CC940C300562A5A /* PageGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageGViewController.m; sourceTree = "<group>"; };
 		C0410AC47C29B98E157F9238 /* Pods-TutorME.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorME.release.xcconfig"; path = "Pods/Target Support Files/Pods-TutorME/Pods-TutorME.release.xcconfig"; sourceTree = "<group>"; };
+		EA51DEDE1CC9480E00174733 /* Styles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Styles.h; sourceTree = "<group>"; };
+		EA51DEDF1CC9480E00174733 /* Styles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Styles.m; sourceTree = "<group>"; };
 		EAE2F3F21CC3F91D00F8562D /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,6 +178,8 @@
 				67F8329D1CB48253004C5811 /* HomeTableViewCell.m */,
 				6742C2D11CBDF02F00563083 /* QuestionTableViewCell.h */,
 				6742C2D21CBDF02F00563083 /* QuestionTableViewCell.m */,
+				EA51DEDE1CC9480E00174733 /* Styles.h */,
+				EA51DEDF1CC9480E00174733 /* Styles.m */,
 			);
 			name = "Special Classes";
 			sourceTree = "<group>";
@@ -375,6 +380,7 @@
 				AE55990F1CC940C300562A5A /* PageGViewController.m in Sources */,
 				AE55990C1CC940B200562A5A /* PageIViewController.m in Sources */,
 				6742C2D31CBDF02F00563083 /* QuestionTableViewCell.m in Sources */,
+				EA51DEE01CC9480E00174733 /* Styles.m in Sources */,
 				67A7A4241CB2EBB700C3C21C /* HomeViewController.m in Sources */,
 				6708D57C1CC947EB00368633 /* AnswerViewController.m in Sources */,
 				67CAC6C01CB3579300963337 /* Registration.m in Sources */,
