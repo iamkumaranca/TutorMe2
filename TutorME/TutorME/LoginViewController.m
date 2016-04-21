@@ -15,7 +15,7 @@
 @end
 
 @implementation LoginViewController
-@synthesize emailField, passwordField, activity, login;
+@synthesize emailField, passwordField, activity, login, signInBtn;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,6 +34,10 @@
     passwordField.layer.borderColor = [[UIColor redColor]CGColor];
     passwordField.layer.borderWidth = 2.0;
     passwordField.layer.cornerRadius = 5;
+    
+    signInBtn.layer.borderColor = [[UIColor blackColor]CGColor];
+    signInBtn.layer.borderWidth = 2.0;
+    signInBtn.layer.cornerRadius = 5;
 
 }
 
