@@ -38,6 +38,16 @@
     signInBtn.layer.borderColor = [[UIColor blackColor]CGColor];
     signInBtn.layer.borderWidth = 2.0;
     signInBtn.layer.cornerRadius = 5;
+    
+    [self.tabBarController.tabBar setBarTintColor:[UIColor redColor]];
+    [self.tabBarController.tabBar setTranslucent:NO];
+    
+    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
+    [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{
+                                                                      NSForegroundColorAttributeName:[UIColor whiteColor],
+                                                                      NSFontAttributeName:[UIFont fontWithName:@"GillSans-Bold" size:20.0]
+                                                                      }];
 
 }
 
