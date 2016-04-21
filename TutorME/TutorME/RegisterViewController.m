@@ -15,7 +15,7 @@
 @end
 
 @implementation RegisterViewController
-@synthesize fnameField, lnameField, schoolField, programField, yearSegCtrl, emailField, passwordField, confirmField, registration, activity, personIcon, schoolIcon, registerIcon;
+@synthesize fnameField, lnameField, schoolField, programField, yearSegCtrl, emailField, passwordField, confirmField, registration, activity, clearBtn, submitBtn, personIcon, schoolIcon, registerIcon;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,32 +37,44 @@
     [registerIcon setText:[NSString stringWithUTF8String:"\uF084"]];
     
     fnameField.layer.borderColor=[[UIColor redColor]CGColor];
-    fnameField.layer.borderWidth=1.0;
+    fnameField.layer.borderWidth=2.0;
     fnameField.layer.cornerRadius=5;
     
     lnameField.layer.borderColor=[[UIColor redColor]CGColor];
-    lnameField.layer.borderWidth=1.0;
+    lnameField.layer.borderWidth=2.0;
     lnameField.layer.cornerRadius=5;
     
     schoolField.layer.borderColor=[[UIColor redColor]CGColor];
-    schoolField.layer.borderWidth=1.0;
+    schoolField.layer.borderWidth=2.0;
     schoolField.layer.cornerRadius=5;
     
     programField.layer.borderColor=[[UIColor redColor]CGColor];
-    programField.layer.borderWidth=1.0;
+    programField.layer.borderWidth=2.0;
     programField.layer.cornerRadius=5;
     
     emailField.layer.borderColor=[[UIColor redColor]CGColor];
-    emailField.layer.borderWidth=1.0;
+    emailField.layer.borderWidth=2.0;
     emailField.layer.cornerRadius=5;
     
     passwordField.layer.borderColor=[[UIColor redColor]CGColor];
-    passwordField.layer.borderWidth=1.0;
+    passwordField.layer.borderWidth=2.0;
     passwordField.layer.cornerRadius=5;
     
     confirmField.layer.borderColor=[[UIColor redColor]CGColor];
-    confirmField.layer.borderWidth=1.0;
+    confirmField.layer.borderWidth=2.0;
     confirmField.layer.cornerRadius=5;
+    
+    clearBtn.layer.borderColor=[[UIColor blackColor]CGColor];
+    clearBtn.layer.borderWidth=2.0;
+    clearBtn.layer.cornerRadius=5;
+    
+    submitBtn.layer.borderColor=[[UIColor blackColor]CGColor];
+    submitBtn.layer.borderWidth=2.0;
+    submitBtn.layer.cornerRadius=5;
+    
+    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
+    [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
 }
 
 - (void)didReceiveMemoryWarning {

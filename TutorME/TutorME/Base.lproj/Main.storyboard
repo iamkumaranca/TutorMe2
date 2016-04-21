@@ -120,7 +120,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" id="l9q-lF-QdY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="Rso-WW-eAa">
                                 <cells>
@@ -336,11 +336,11 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="61" id="yDW-yd-dyW">
-                                        <rect key="frame" x="0.0" y="464" width="320" height="61"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yDW-yd-dyW">
+                                        <rect key="frame" x="0.0" y="464" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yDW-yd-dyW" id="oEg-bR-XVI">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hm9-dN-ScI">
@@ -354,13 +354,37 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="43" id="agh-F1-zVq">
-                                        <rect key="frame" x="0.0" y="525" width="320" height="43"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="agh-F1-zVq">
+                                        <rect key="frame" x="0.0" y="504" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="agh-F1-zVq" id="thu-MI-Z4H">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyE-uS-wbY">
+                                                    <rect key="frame" x="8" y="8" width="150" height="50"/>
+                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="15"/>
+                                                    <state key="normal" title="Clear">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="resetAll:" destination="X9o-1j-bZ0" eventType="touchUpInside" id="lR9-1q-jQf"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="391-pH-mxB">
+                                                    <rect key="frame" x="162" y="8" width="150" height="50"/>
+                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="15"/>
+                                                    <state key="normal" title="Submit">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="submitRegistration:" destination="X9o-1j-bZ0" eventType="touchUpInside" id="Bgm-Xk-fjM"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -371,24 +395,12 @@
                             <outlet property="delegate" destination="X9o-1j-bZ0" id="ZWH-JK-aSV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Registration" id="fEG-hO-xGh">
-                        <barButtonItem key="leftBarButtonItem" image="clear" id="LzG-F5-WpH">
-                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="resetAll:" destination="X9o-1j-bZ0" id="E83-bS-hj8"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="submit" id="elv-fM-XI5">
-                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="submitRegistration:" destination="X9o-1j-bZ0" id="4he-bj-UFk"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Registration" id="fEG-hO-xGh"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="activity" destination="qVk-5K-p0K" id="lfg-wX-IkF"/>
+                        <outlet property="clearBtn" destination="cyE-uS-wbY" id="RUr-cE-Z8G"/>
                         <outlet property="confirmField" destination="Hm9-dN-ScI" id="wqK-bn-Ag6"/>
                         <outlet property="emailField" destination="BFM-NL-cSi" id="mKO-lw-nIY"/>
                         <outlet property="fnameField" destination="kJq-y2-aHy" id="cJr-Kw-Xgy"/>
@@ -399,6 +411,7 @@
                         <outlet property="registerIcon" destination="IMb-t6-wIo" id="utR-Dt-XWa"/>
                         <outlet property="schoolField" destination="ccb-1b-L7x" id="I0a-GA-U74"/>
                         <outlet property="schoolIcon" destination="8fl-4H-SC7" id="ddp-Ta-TaD"/>
+                        <outlet property="submitBtn" destination="391-pH-mxB" id="wud-js-byL"/>
                         <outlet property="yearSegCtrl" destination="D6D-FZ-IMa" id="WPR-Z5-7IH"/>
                     </connections>
                 </tableViewController>
@@ -1350,7 +1363,6 @@
     <resources>
         <image name="about" width="32" height="32"/>
         <image name="back" width="32" height="32"/>
-        <image name="clear" width="32" height="32"/>
         <image name="eraser" width="32" height="32"/>
         <image name="facebook" width="32" height="32"/>
         <image name="home" width="32" height="32"/>
@@ -1360,7 +1372,6 @@
         <image name="profile" width="32" height="32"/>
         <image name="register" width="32" height="32"/>
         <image name="score" width="32" height="32"/>
-        <image name="submit" width="32" height="24"/>
         <image name="twitter" width="32" height="32"/>
         <image name="upload" width="32" height="32"/>
     </resources>

@@ -20,6 +20,8 @@
     IBOutlet UITextField *emailField;
     IBOutlet UITextField *passwordField;
     IBOutlet UITextField *confirmField;
+    IBOutlet UIButton *clearBtn;
+    IBOutlet UIButton *submitBtn;
     Registration *registration;
     IBOutlet UIActivityIndicatorView *activity;
     IBOutlet UILabel *personIcon;
@@ -35,6 +37,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *emailField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordField;
 @property (strong, nonatomic) IBOutlet UITextField *confirmField;
+@property (strong, nonatomic) IBOutlet UIButton *clearBtn;
+@property (strong, nonatomic) IBOutlet UIButton *submitBtn;
 @property (strong, nonatomic) Registration *registration;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activity;
 @property (strong, nonatomic) IBOutlet UILabel *personIcon;
