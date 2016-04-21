@@ -98,6 +98,27 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSInteger row = indexPath.row;
+    NSArray *ansDetails = @[
+                            [self.ansList objectAtIndex:row],
+                            [@"Asked by " stringByAppendingFormat:@"%@\nOn %@", [self.nameList objectAtIndex:row], [self.dateList objectAtIndex:row]]
+                            ];
+    NSString *msg = [ansDetails componentsJoinedByString:@"\n\n"];
+    [self alert:@"Answer" message:msg];
+}
+
+#pragma mark Alert methods
+- (void)alert:(NSString *)title message:(NSString *)msg {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+#pragma mark Navigation methods
+
 - (IBAction)back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }

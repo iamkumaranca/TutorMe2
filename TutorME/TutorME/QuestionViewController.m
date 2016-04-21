@@ -211,7 +211,7 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-#pragma Social Media methods
+#pragma mark Social Media methods
 
 - (IBAction)postQuestionToFacebook:(id)sender {
     
