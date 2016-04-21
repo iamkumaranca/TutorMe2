@@ -31,10 +31,16 @@
     b.layer.cornerRadius = 5;
 }
 
-+ (void)fontIcon:(UILabel *)f icon:(NSString *)i;
++ (void)fontIcon:(UILabel *)f icon:(NSString *)i
 {
     [f setFont:[UIFont fontWithName:@"FontAwesome" size:17]];
     [f setText:i];
     f.textColor = [UIColor redColor];
+}
+
++ (void)fontIconButton:(UIButton *)b icon:(NSString *)i
+{
+    b.titleLabel.font = [UIFont fontWithName:@"FontAwesome" size:32];
+    [b setTitle:i forState:UIControlStateNormal];
 }
 @end

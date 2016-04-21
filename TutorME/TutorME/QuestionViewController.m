@@ -8,6 +8,7 @@
 
 #import "QuestionViewController.h"
 #import "AppDelegate.h"
+#import "Styles.h"
 
 @interface QuestionViewController ()
 @property (strong, nonatomic) Firebase *ref;
@@ -16,13 +17,14 @@
 @property (strong, nonatomic) Firebase *uref;
 @property (strong, nonatomic) Firebase *uscoreref;
 @property FirebaseHandle ahandle;
+@property (strong, nonatomic) Styles *styles;
 
 @property (strong, nonatomic) NSString *fname;
 @property (strong, nonatomic) NSString *lname;
 @end
 
 @implementation QuestionViewController
-@synthesize questionTextView, ansTextView, viewBtn, clearBtn, submitBtn, activity, tapper, qid;
+@synthesize questionTextView, ansTextView, viewBtn, clearBtn, submitBtn, activity, tapper, qid, facebook, twitter;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,6 +36,9 @@
     self.uref = [self.ref childByAppendingPath:@"users"];
     self.uscoreref = [self.uref childByAppendingPath:[self.ref.authData.uid stringByAppendingString:@"/score"]];
     
+    // Initialize Styles class
+    self.styles = [[Styles alloc] init];
+    
     // Initialize Gesture Recognizer
     tapper = [[UITapGestureRecognizer alloc]
               initWithTarget:self action:@selector(handleSingleTap:)];
@@ -42,25 +47,19 @@
     
 
     // Initialize Border
-    questionTextView.layer.borderColor = [[UIColor grayColor]CGColor];
-    questionTextView.layer.borderWidth = 2.0;
+    [Styles textViewStyle:questionTextView];
+    [Styles textViewStyle:ansTextView];
     
-    ansTextView.layer.borderColor = [[UIColor grayColor]CGColor];
-    ansTextView.layer.borderWidth = 2.0;
+    [Styles buttonStyle:viewBtn];
+    [Styles buttonStyle:submitBtn];
+    [Styles buttonStyle:clearBtn];
     
-    viewBtn.layer.borderColor = [[UIColor blackColor]CGColor];
-    viewBtn.layer.borderWidth = 2.0;
-    viewBtn.layer.cornerRadius = 5;
+    [Styles fontIconButton:facebook icon:@"\uF230"];
+    [Styles fontIconButton:twitter icon:@"\uF081"];
     
-    clearBtn.layer.borderColor = [[UIColor blackColor]CGColor];
-    clearBtn.layer.borderWidth = 2.0;
-    clearBtn.layer.cornerRadius = 5;
+    //[Styles fontIcon:facebook icon:[NSString stringWithUTF8String:"\uF230"]];
+    //[Styles fontIcon:twitter icon:[NSString stringWithUTF8String:"\uF081"]];
     
-    submitBtn.layer.borderColor = [[UIColor blackColor]CGColor];
-    submitBtn.layer.borderWidth = 2.0;
-    submitBtn.layer.cornerRadius = 5;
-    
-    //
     [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
     [self.navigationController.navigationBar setTranslucent:NO];
     [self.navigationController.navigationBar setTitleTextAttributes:@{

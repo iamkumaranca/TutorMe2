@@ -15,5 +15,5 @@
 + (void)textViewStyle:(UITextView *)t;
 + (void)buttonStyle:(UIButton *)b;
 + (void)fontIcon:(UILabel *)f icon:(NSString *)i;
-
++ (void)fontIconButton:(UIButton *)b icon:(NSString *)i;
 @end

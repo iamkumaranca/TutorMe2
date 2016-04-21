@@ -455,13 +455,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="TutorMe" id="87H-7V-3Sj">
                         <barButtonItem key="leftBarButtonItem" image="logout" id="O7d-cW-l7Y">
-                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="logout:" destination="qYB-Vb-xcc" id="eqM-gk-him"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="new" id="2Ok-lj-jOO">
-                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="87k-DQ-GNc" kind="presentation" identifier="homeSegue" id="6E1-10-KqU"/>
                             </connections>
@@ -669,13 +669,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Profile" id="QSg-ly-syO">
                         <barButtonItem key="leftBarButtonItem" image="logout" id="Mft-jF-WXZ">
-                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="logout:" destination="yoz-B1-BC4" id="ChR-nl-STc"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="new" id="8Ae-Fv-zfR">
-                            <color key="tintColor" red="0.90196078430000004" green="0.18039215689999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="87k-DQ-GNc" kind="presentation" identifier="profileSegue" id="YMz-iK-8Zz"/>
                             </connections>
@@ -739,14 +739,20 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMh-d2-lyn">
                                                     <rect key="frame" x="8" y="8" width="50" height="50"/>
-                                                    <state key="normal" title="F"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                    <state key="normal" title="F">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="postQuestionToFacebook:" destination="JS1-G7-jYT" eventType="touchUpInside" id="d2D-f9-Rnx"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jd7-8R-KKB">
                                                     <rect key="frame" x="66" y="8" width="50" height="50"/>
-                                                    <state key="normal" title="T"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                    <state key="normal" title="T">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="postQuestionToTwitter:" destination="JS1-G7-jYT" eventType="touchUpInside" id="62N-0K-ggY"/>
                                                     </connections>
@@ -826,7 +832,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="TutorMe" id="q1a-lx-Zam">
                         <barButtonItem key="leftBarButtonItem" image="back" id="rMr-EK-hKx">
-                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="back:" destination="JS1-G7-jYT" id="4t4-AV-71c"/>
                             </connections>
@@ -838,8 +844,10 @@
                         <outlet property="activity" destination="HaK-JT-QdA" id="neC-cj-a5L"/>
                         <outlet property="ansTextView" destination="bs8-0u-c1L" id="apX-Ti-xoJ"/>
                         <outlet property="clearBtn" destination="OWm-Lm-qIj" id="Lrs-kV-jBr"/>
+                        <outlet property="facebook" destination="tMh-d2-lyn" id="DbG-cx-Gs0"/>
                         <outlet property="questionTextView" destination="E0U-av-0Ue" id="RdF-1D-jfI"/>
                         <outlet property="submitBtn" destination="EVc-2X-Hkk" id="gbO-TL-9J2"/>
+                        <outlet property="twitter" destination="jd7-8R-KKB" id="43l-Jh-4XK"/>
                         <outlet property="viewBtn" destination="ceI-8h-kEs" id="hXZ-uq-VrR"/>
                     </connections>
                 </tableViewController>
@@ -862,7 +870,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Answers" id="fM6-ud-6kC">
                         <barButtonItem key="leftBarButtonItem" image="back" id="aHJ-0s-lGf">
-                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="back:" destination="H5h-M6-pNZ" id="dWt-wb-G0Z"/>
                             </connections>
@@ -1021,7 +1029,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="New Question" id="azc-M5-MJi">
                         <barButtonItem key="leftBarButtonItem" image="back" id="sE3-WE-ssv">
-                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="back:" destination="mL2-Wj-YNr" id="ef0-ZN-Riv"/>
                             </connections>
@@ -1056,13 +1064,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Scores" id="A1e-WJ-1Bx">
                         <barButtonItem key="leftBarButtonItem" image="logout" id="3Yo-uR-3Nu">
-                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="logout:" destination="tsu-S5-HV8" id="19v-MZ-W5B"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="new" id="9CX-sg-C11">
-                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="87k-DQ-GNc" kind="presentation" identifier="scoreSegue" id="9QA-eF-zAJ"/>
                             </connections>
