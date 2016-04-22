@@ -40,7 +40,7 @@
 
 + (void)fontIconButton:(UIButton *)b icon:(NSString *)i
 {
-    b.titleLabel.font = [UIFont fontWithName:@"FontAwesome" size:32];
+    b.titleLabel.font = [UIFont fontWithName:@"FontAwesome" size:50];
     [b setTitle:i forState:UIControlStateNormal];
 }
 @end

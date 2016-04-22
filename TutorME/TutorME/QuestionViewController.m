@@ -54,7 +54,7 @@
     [Styles buttonStyle:submitBtn];
     [Styles buttonStyle:clearBtn];
 
-    [Styles fontIconButton:facebook icon:@"\uF230"];
+    [Styles fontIconButton:facebook icon:@"\uF082"];
     [Styles fontIconButton:twitter icon:@"\uF081"];
 
     //[Styles fontIcon:facebook icon:[NSString stringWithUTF8String:"\uF230"]];

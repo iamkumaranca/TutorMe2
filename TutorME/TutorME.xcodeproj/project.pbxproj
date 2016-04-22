@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		385D869403DC03AB35B0BFA1 /* libPods-TutorME.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4498332D6A341D3D23543A84 /* libPods-TutorME.a */; };
 		6708D57C1CC947EB00368633 /* AnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6708D57B1CC947EB00368633 /* AnswerViewController.m */; };
-		6742C2D31CBDF02F00563083 /* AnswerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6742C2D21CBDF02F00563083 /* AnswerTableViewCell.m */; };
 		6750B48C1CBEB88000A5D0B1 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6750B48B1CBEB88000A5D0B1 /* Social.framework */; };
 		6788EED51CBD70D7007B4070 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6788EED41CBD70D7007B4070 /* QuestionViewController.m */; };
 		67A7A4241CB2EBB700C3C21C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A7A4231CB2EBB700C3C21C /* HomeViewController.m */; };
@@ -35,7 +34,8 @@
 		AE5599091CC940A100562A5A /* PageTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5599081CC940A100562A5A /* PageTViewController.m */; };
 		AE55990C1CC940B200562A5A /* PageIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE55990B1CC940B200562A5A /* PageIViewController.m */; };
 		AE55990F1CC940C300562A5A /* PageGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE55990E1CC940C300562A5A /* PageGViewController.m */; };
-		EA51DEE01CC9480E00174733 /* Styles.m in Sources */ = {isa = PBXBuildFile; fileRef = EA51DEDF1CC9480E00174733 /* Styles.m */; };
+		EA2A27221CC999B200BB85A5 /* Styles.m in Sources */ = {isa = PBXBuildFile; fileRef = EA51DEDF1CC9480E00174733 /* Styles.m */; };
+		EA2A27231CC999B800BB85A5 /* AnswerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6742C2D21CBDF02F00563083 /* AnswerTableViewCell.m */; };
 		EAE2F3F31CC3F91D00F8562D /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAE2F3F21CC3F91D00F8562D /* fontawesome-webfont.ttf */; };
 /* End PBXBuildFile section */
 
@@ -178,8 +178,6 @@
 				67F8329D1CB48253004C5811 /* HomeTableViewCell.m */,
 				6742C2D11CBDF02F00563083 /* AnswerTableViewCell.h */,
 				6742C2D21CBDF02F00563083 /* AnswerTableViewCell.m */,
-				6742C2D11CBDF02F00563083 /* QuestionTableViewCell.h */,
-				6742C2D21CBDF02F00563083 /* QuestionTableViewCell.m */,
 				EA51DEDE1CC9480E00174733 /* Styles.h */,
 				EA51DEDF1CC9480E00174733 /* Styles.m */,
 			);
@@ -363,6 +361,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA2A27231CC999B800BB85A5 /* AnswerTableViewCell.m in Sources */,
+				EA2A27221CC999B200BB85A5 /* Styles.m in Sources */,
 				67A7A43B1CB3060500C3C21C /* NewQuestionViewController.m in Sources */,
 				67D94DC81CB2150900D84C7C /* RegisterViewController.m in Sources */,
 				67CAC6C51CB4040000963337 /* NewQuestion.m in Sources */,
@@ -381,9 +381,6 @@
 				67D94D751CB1AD9100D84C7C /* main.m in Sources */,
 				AE55990F1CC940C300562A5A /* PageGViewController.m in Sources */,
 				AE55990C1CC940B200562A5A /* PageIViewController.m in Sources */,
-				6742C2D31CBDF02F00563083 /* AnswerTableViewCell.m in Sources */,
-				6742C2D31CBDF02F00563083 /* QuestionTableViewCell.m in Sources */,
-				EA51DEE01CC9480E00174733 /* Styles.m in Sources */,
 				67A7A4241CB2EBB700C3C21C /* HomeViewController.m in Sources */,
 				6708D57C1CC947EB00368633 /* AnswerViewController.m in Sources */,
 				67CAC6C01CB3579300963337 /* Registration.m in Sources */,
@@ -500,6 +497,7 @@
 			baseConfigurationReference = 9F6547F4747890712863D55B /* Pods-TutorME.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = TutorME/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.kmayo.TutorME;
@@ -512,6 +510,7 @@
 			baseConfigurationReference = C0410AC47C29B98E157F9238 /* Pods-TutorME.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = TutorME/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.kmayo.TutorME;
