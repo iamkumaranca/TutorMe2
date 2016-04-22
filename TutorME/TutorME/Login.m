@@ -10,6 +10,7 @@
 @implementation Login
 @synthesize email, password;
 
+// A method to initialize a Login object
 - (id)initWithData:(NSString *)e password:(NSString *)p {
     if(self = [super init])
     {
@@ -19,6 +20,7 @@
     return self;
 }
 
+// A method for checking if the email field is empty
 - (BOOL)isEmailEmpty {
     BOOL empty = YES;
     if (![self.email isEqualToString: @""])
@@ -26,6 +28,7 @@
     return empty;
 }
 
+// A method for checking if the password field is empty
 - (BOOL)isPasswordEmpty {
     BOOL empty = YES;
     if (![self.password isEqualToString: @""])

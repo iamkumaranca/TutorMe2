@@ -10,6 +10,8 @@
 @implementation AnswerTableViewCell
 @synthesize ansLbl, nameLbl, dateLbl;
 
+// A method to initialize the UITableViewCell for the AnswerViewController
+// Formats the three UILabels contained in the UITableViewCell
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     
@@ -42,6 +44,7 @@
     return self;
 }
 
+// A method for positioning and sizing the UILabel on the UITableViewCell
 - (void)layoutSubviews {
     [super layoutSubviews];
     

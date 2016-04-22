@@ -10,6 +10,7 @@
 @implementation NewQuestion
 @synthesize desc, details;
 
+// A method to initialize a New Question object
 - (id)initWithData:(NSString *)dsc details:(NSString *)dt {
     if(self = [super init])
     {
@@ -19,6 +20,7 @@
     return self;
 }
 
+// A method to check if the description field is empty
 - (BOOL)isDescEmpty {
     BOOL empty = NO;
     if ([self.desc isEqualToString:@""])
@@ -26,6 +28,7 @@
     return empty;
 }
 
+// A method to check if the details field is empty
 - (BOOL)isDetailsEmpty {
     BOOL empty = NO;
     if ([self.details isEqualToString:@""]) {

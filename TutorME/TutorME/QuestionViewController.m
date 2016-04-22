@@ -26,6 +26,10 @@
 
 @synthesize questionTextView, ansTextView, viewBtn, clearBtn, submitBtn, activity, tapper, qid, facebook, twitter, ansList;
 
+#pragma mark View Methods
+// All Initialization are added in this method. The following are initialized: Firbase refs, UIView styles,
+// Gesture Recognizer so tapping out of the UITextView dismisses the keyboard, the activity indicator, and the
+// data arrays that stores information from the database
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -57,16 +61,6 @@
     [Styles fontIconButton:facebook icon:@"\uF082"];
     [Styles fontIconButton:twitter icon:@"\uF081"];
 
-    //[Styles fontIcon:facebook icon:[NSString stringWithUTF8String:"\uF230"]];
-    //[Styles fontIcon:twitter icon:[NSString stringWithUTF8String:"\uF081"]];
-
-    // Iniatilize navigation bar
-    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
-    [self.navigationController.navigationBar setTranslucent:NO];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{
-                                                                      NSForegroundColorAttributeName:[UIColor whiteColor],
-                                                                      NSFontAttributeName:[UIFont fontWithName:@"GillSans-Bold" size:20.0]
-                                                                      }];
     // Initialize Activity Indicator
     [self.activity setHidden:YES];
     [self.activity stopAnimating];
@@ -76,6 +70,8 @@
 
 }
 
+// This method is used to handle clean up. All objects from data array is removed and the Firebase handle is
+// removed.
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
 
@@ -84,6 +80,10 @@
     [self.aref removeObserverWithHandle:self.ahandle];
 }
 
+// This method is used to retrieve question data from the database. The data is displayed on a UITextView so
+// that the user can view all information about the question. The logic includes checking if the question has
+// been answered. The text and operation on a UIButton changes depending on whether the question has associated
+// answers or not. Firebase data retrieval methods were used to accomplished these tasks.
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
@@ -115,6 +115,8 @@
             }
         }
 
+        // Disables or Enables UIButton used to transition to AnswerViewController depending on whether
+        // the question has answers or not.
         if ([self.ansList count] > 0) {
             [self.viewBtn setTitle:@"View Answers" forState:UIControlStateNormal];
             [self.viewBtn setEnabled:YES];
@@ -129,6 +131,9 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark Navigation methods
+// This method is for transitioning to the AnswerViewController and passes the question id. The question id is
+// required for Firebase query methods.
 - (IBAction)viewAnswers:(id)sender {
     // Go to Question screen (UINavigationController)
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -142,23 +147,30 @@
     [self presentViewController:answerNC animated:YES completion:nil];
 }
 
+// This method is for transitioning to the HomeViewController.
 - (IBAction)back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark Text Field Related Methods
+// This method is for clearing the answer UITextView
 - (IBAction)clearAnswer:(id)sender {
     self.ansTextView.text = @"";
 }
 
+// This method is for resetting the initial text in the answer UITextView
 - (void)resetAnswer{
     self.ansTextView.text = @"Enter your answer here...";
 }
 
+// This method is for dismissing the keyboard when UITextView is not focussed on.
 - (void)handleSingleTap:(UITapGestureRecognizer *)sender
 {
     [self.view endEditing:YES];
 }
 
+// This method is for specifying the max number of characters allowed in the answer UITextView.
+// Entering amount of characters above the set limit of 255 is not permitted.
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     if (textView.text.length >= MAX_LENGTH_255 && range.length == 0) {
         return NO; // Change not allowed
@@ -167,6 +179,10 @@
     }
 }
 
+#pragma mark Submit Button 
+
+// This method handles writing to the database the information entered by the user. All fields are required and checked.
+// The score of the user is also updated. Firebase saving and retrieving data methods were used to accomplished all tasks
 - (IBAction)post:(id)sender {
     NSString *msg = @"";
 
@@ -234,6 +250,8 @@
     }
 }
 
+#pragma mark Alert Method
+// A simple alert diaglog for informing the user if the posting of the question is successful or not.
 - (void)alert:(NSString *)title message:(NSString *)msg {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
@@ -242,7 +260,7 @@
 }
 
 #pragma mark Social Media methods
-
+// This method is for posting the details of the question to a facebook account
 - (IBAction)postQuestionToFacebook:(id)sender {
 
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
@@ -260,6 +278,7 @@
 
 }
 
+// This method is used for posting the details of the question to a twitter account
 - (IBAction)postQuestionToTwitter:(id)sender {
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
         SLComposeViewController *twitterSLCVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];

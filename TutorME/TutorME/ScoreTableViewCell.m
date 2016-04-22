@@ -10,6 +10,8 @@
 @implementation ScoreTableViewCell
 @synthesize nameLbl, schoolLbl, scoreLbl;
 
+// A method to initialize the UITableViewCell for the ScoreViewController
+// Formats the three UILabels contained in the UITableViewCell
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -41,6 +43,7 @@
     return self;
 }
 
+// A method for positioning and sizing the UILabels on the UITableViewCell
 - (void)layoutSubviews {
     [super layoutSubviews];
     

@@ -18,6 +18,8 @@
 @implementation AnswerViewController
 @synthesize ansTableView, ansList, nameList, dateList, qid;
 
+#pragma marks View Methods
+// Initialization of arrays and firebase methods are completed when the view loads
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -29,16 +31,10 @@
     self.ansList = [[NSMutableArray alloc] init];
     self.nameList = [[NSMutableArray alloc] init];
     self.dateList = [[NSMutableArray alloc] init];
-    
-    // Iniatilize navigation bar
-    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
-    [self.navigationController.navigationBar setTranslucent:NO];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{
-                                                                      NSForegroundColorAttributeName:[UIColor whiteColor],
-                                                                      NSFontAttributeName:[UIFont fontWithName:@"GillSans-Bold" size:20.0]
-                                                                      }];
 }
 
+// Remove Firebase handle and all objects in data arrays when the view disappears
+// Removing the Firebase handle in this method is recommended by Firebase
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
@@ -49,6 +45,8 @@
     [self.aref removeObserverWithHandle:self.ahandle];
 }
 
+// When the view is about to appear, the database is queried to find any answers for the particular question
+// being viewed by the user, if any. A firebase data retrieval method was used to accomplish this task.
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -72,6 +70,10 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark TableView Methods
+
+// The following methods are as taught in class for creating custom UITableViewCells.
+// The definition of the custom UITableViewCell is in the AnswerTableViewCell class.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [ansList count];
 }
@@ -109,6 +111,8 @@
 }
 
 #pragma mark Alert methods
+// A simple alert dialog that displays the content of the answer. This was required to display all content entered
+// by a user as some of the info is cut off on the UITableViewCell in scenarios where a user enters a lot of text.
 - (void)alert:(NSString *)title message:(NSString *)msg {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
@@ -117,7 +121,7 @@
 }
 
 #pragma mark Navigation methods
-
+// A method to transition back to the QuestionViewController
 - (IBAction)back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
