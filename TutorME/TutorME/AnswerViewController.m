@@ -103,7 +103,7 @@
     NSInteger row = indexPath.row;
     NSArray *ansDetails = @[
                             [self.ansList objectAtIndex:row],
-                            [@"Asked by " stringByAppendingFormat:@"%@\nOn %@", [self.nameList objectAtIndex:row], [self.dateList objectAtIndex:row]]
+                            [@"Answered by " stringByAppendingFormat:@"%@\nOn %@", [self.nameList objectAtIndex:row], [self.dateList objectAtIndex:row]]
                             ];
     NSString *msg = [ansDetails componentsJoinedByString:@"\n\n"];
     [self alert:@"Answer" message:msg];
