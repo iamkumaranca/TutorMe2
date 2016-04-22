@@ -21,6 +21,7 @@
     IBOutlet UIActivityIndicatorView *activity;
     UIGestureRecognizer *tapper;
     NSString *qid;
+    NSMutableArray *ansList;
 }
 
 @property (strong, nonatomic) IBOutlet UITextView *questionTextView;
@@ -31,5 +32,6 @@
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activity;
 @property (strong, nonatomic) UIGestureRecognizer *tapper;
 @property (strong, nonatomic) NSString *qid;
+@property (strong, nonatomic) NSMutableArray *ansList;
 
 @end

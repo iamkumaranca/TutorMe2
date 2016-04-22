@@ -22,7 +22,7 @@
 @end
 
 @implementation QuestionViewController
-@synthesize questionTextView, ansTextView, viewBtn, clearBtn, submitBtn, activity, tapper, qid;
+@synthesize questionTextView, ansTextView, viewBtn, clearBtn, submitBtn, activity, tapper, qid, ansList;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -70,6 +70,18 @@
     // Initialize Activity Indicator
     [self.activity setHidden:YES];
     [self.activity stopAnimating];
+    
+    self.ansList = [[NSMutableArray alloc] init];
+    
+    
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [self.ansList removeAllObjects];
+    
+    [self.aref removeObserverWithHandle:self.ahandle];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -92,6 +104,24 @@
     [[self.uref childByAppendingPath:self.ref.authData.uid] observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *usnapshot) {
         self.fname = usnapshot.value[@"first_name"];
         self.lname = usnapshot.value[@"last_name"];
+    }];
+    
+    // Retrieve answers list if any
+    self.ahandle = [[self.aref queryOrderedByKey] observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *asnapshot) {
+        
+        if (asnapshot.value != [NSNull null]) {
+            if ([asnapshot.value[@"question_id"] isEqualToString:self.qid]) {
+                [self.ansList insertObject:asnapshot.value[@"details"] atIndex:0];
+            }
+        }
+        
+        if ([self.ansList count] > 0) {
+            [self.viewBtn setTitle:@"View Answers" forState:UIControlStateNormal];
+            [self.viewBtn setEnabled:YES];
+        } else {
+            [self.viewBtn setTitle:@"Not Answered" forState:UIControlStateNormal];
+            [self.viewBtn setEnabled:NO];
+        }
     }];
 }
 
