@@ -11,6 +11,7 @@
 		6708D57C1CC947EB00368633 /* AnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6708D57B1CC947EB00368633 /* AnswerViewController.m */; };
 		67468A241CC9B2C90059FD75 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 67468A231CC9B2C90059FD75 /* background.png */; };
 		6750B48C1CBEB88000A5D0B1 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6750B48B1CBEB88000A5D0B1 /* Social.framework */; };
+		6770B08C1CCACE52008B3ADE /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6770B08B1CCACE52008B3ADE /* README.txt */; };
 		6788EED51CBD70D7007B4070 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6788EED41CBD70D7007B4070 /* QuestionViewController.m */; };
 		67A7A4241CB2EBB700C3C21C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A7A4231CB2EBB700C3C21C /* HomeViewController.m */; };
 		67A7A4271CB2EBCF00C3C21C /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A7A4261CB2EBCF00C3C21C /* ScoreViewController.m */; };
@@ -49,6 +50,7 @@
 		6742C2D21CBDF02F00563083 /* AnswerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerTableViewCell.m; sourceTree = "<group>"; };
 		67468A231CC9B2C90059FD75 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		6750B48B1CBEB88000A5D0B1 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		6770B08B1CCACE52008B3ADE /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		6788EED31CBD70D7007B4070 /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionViewController.h; sourceTree = "<group>"; };
 		6788EED41CBD70D7007B4070 /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionViewController.m; sourceTree = "<group>"; };
 		67A7A4221CB2EBB700C3C21C /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -124,6 +126,14 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		6770B08A1CCACE04008B3ADE /* README */ = {
+			isa = PBXGroup;
+			children = (
+				6770B08B1CCACE52008B3ADE /* README.txt */,
+			);
+			name = README;
+			sourceTree = "<group>";
+		};
 		6786F85D8FD564607E1E2AA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +166,7 @@
 		67D94D721CB1AD9100D84C7C /* TutorME */ = {
 			isa = PBXGroup;
 			children = (
+				6770B08A1CCACE04008B3ADE /* README */,
 				67468A221CC9B2AC0059FD75 /* Images */,
 				67D94D8C1CB1AE5D00D84C7C /* View Controllers */,
 				67D94D8B1CB1AE4200D84C7C /* Nibs */,
@@ -326,6 +337,7 @@
 				EAE2F3F31CC3F91D00F8562D /* fontawesome-webfont.ttf in Resources */,
 				67D94D801CB1AD9100D84C7C /* Assets.xcassets in Resources */,
 				EA6FCF4C1CC9D7C200D31D8D /* 57c763f4b20a40d0cc0049e7d7cf17c9.jpg in Resources */,
+				6770B08C1CCACE52008B3ADE /* README.txt in Resources */,
 				67D94D7E1CB1AD9100D84C7C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
