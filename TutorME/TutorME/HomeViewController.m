@@ -18,7 +18,7 @@
 @implementation HomeViewController
 @synthesize qidList, descList, detailsList, nameList, dateList, homeTableView;
 
-// This method is to intialize the constructor.
+// This method is for initializing the firebase refs and data arrays.
 - (void)viewDidLoad {
     [super viewDidLoad];
     
