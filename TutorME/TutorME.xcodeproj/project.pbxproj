@@ -37,6 +37,7 @@
 		AE55990F1CC940C300562A5A /* PageGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE55990E1CC940C300562A5A /* PageGViewController.m */; };
 		EA2A27221CC999B200BB85A5 /* Styles.m in Sources */ = {isa = PBXBuildFile; fileRef = EA51DEDF1CC9480E00174733 /* Styles.m */; };
 		EA2A27231CC999B800BB85A5 /* AnswerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6742C2D21CBDF02F00563083 /* AnswerTableViewCell.m */; };
+		EA6FCF4C1CC9D7C200D31D8D /* 57c763f4b20a40d0cc0049e7d7cf17c9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA6FCF4B1CC9D7C200D31D8D /* 57c763f4b20a40d0cc0049e7d7cf17c9.jpg */; };
 		EAE2F3F31CC3F91D00F8562D /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAE2F3F21CC3F91D00F8562D /* fontawesome-webfont.ttf */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		C0410AC47C29B98E157F9238 /* Pods-TutorME.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TutorME.release.xcconfig"; path = "Pods/Target Support Files/Pods-TutorME/Pods-TutorME.release.xcconfig"; sourceTree = "<group>"; };
 		EA51DEDE1CC9480E00174733 /* Styles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Styles.h; sourceTree = "<group>"; };
 		EA51DEDF1CC9480E00174733 /* Styles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Styles.m; sourceTree = "<group>"; };
+		EA6FCF4B1CC9D7C200D31D8D /* 57c763f4b20a40d0cc0049e7d7cf17c9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 57c763f4b20a40d0cc0049e7d7cf17c9.jpg; sourceTree = "<group>"; };
 		EAE2F3F21CC3F91D00F8562D /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 		67D94D671CB1AD9100D84C7C = {
 			isa = PBXGroup;
 			children = (
+				EA6FCF4A1CC9D7B400D31D8D /* Images */,
 				EAE2F3F21CC3F91D00F8562D /* fontawesome-webfont.ttf */,
 				67D94D721CB1AD9100D84C7C /* TutorME */,
 				67D94D711CB1AD9100D84C7C /* Products */,
@@ -191,6 +194,8 @@
 				6742C2D21CBDF02F00563083 /* AnswerTableViewCell.m */,
 				EA51DEDE1CC9480E00174733 /* Styles.h */,
 				EA51DEDF1CC9480E00174733 /* Styles.m */,
+				AE4A62EF1CC97D6400436978 /* MapAnnotation.h */,
+				AE4A62F01CC97D6400436978 /* MapAnnotation.m */,
 			);
 			name = "Special Classes";
 			sourceTree = "<group>";
@@ -235,8 +240,6 @@
 				AE55990E1CC940C300562A5A /* PageGViewController.m */,
 				AE4A62E91CC9769300436978 /* MapViewController.h */,
 				AE4A62EA1CC9769300436978 /* MapViewController.m */,
-				AE4A62EF1CC97D6400436978 /* MapAnnotation.h */,
-				AE4A62F01CC97D6400436978 /* MapAnnotation.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -248,6 +251,14 @@
 				C0410AC47C29B98E157F9238 /* Pods-TutorME.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EA6FCF4A1CC9D7B400D31D8D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				EA6FCF4B1CC9D7C200D31D8D /* 57c763f4b20a40d0cc0049e7d7cf17c9.jpg */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +325,7 @@
 				67468A241CC9B2C90059FD75 /* background.png in Resources */,
 				EAE2F3F31CC3F91D00F8562D /* fontawesome-webfont.ttf in Resources */,
 				67D94D801CB1AD9100D84C7C /* Assets.xcassets in Resources */,
+				EA6FCF4C1CC9D7C200D31D8D /* 57c763f4b20a40d0cc0049e7d7cf17c9.jpg in Resources */,
 				67D94D7E1CB1AD9100D84C7C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
