@@ -21,6 +21,7 @@
     // Do any additional setup after loading the view.
     
     [self setMap];
+    //set Annotation info and show it on map
     MapAnnotation* annotation=[[MapAnnotation alloc]init];
     annotation.coordinate=CLLocationCoordinate2DMake(43.656837, -79.738709);
     annotation.title=@"TutorMe";
@@ -30,6 +31,7 @@
 
 -(void)setMap
 {
+    //MapView configurations.
     self.mapView=[[MKMapView alloc]init];
     self.mapView.frame=self.view.bounds;
     self.mapView.mapType=MKMapTypeStandard;
@@ -39,7 +41,7 @@
     self.mapView.pitchEnabled=YES;
     self.mapView.rotateEnabled=YES;
     
-    
+    //Need it for zoomlevel and starting location
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = 43.656837; // your latitude value
     zoomLocation.longitude= -79.738709; // your longitude value

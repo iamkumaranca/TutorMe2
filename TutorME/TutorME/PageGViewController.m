@@ -15,11 +15,13 @@
 @implementation PageGViewController
 @synthesize wbPage, activity;
 
+//Show activity when openning website
 -(void)webViewDidStartLoad:(UIWebView *)webView{
     [activity setHidden:NO];
     [activity startAnimating];
 }
 
+//Hide activity after website shown
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
     [activity setHidden:YES];
     [activity startAnimating];
