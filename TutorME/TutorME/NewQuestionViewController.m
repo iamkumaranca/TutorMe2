@@ -48,10 +48,11 @@
     tapper.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tapper];
     
-    // Styling
+    // Styling borders
     [Styles fieldStyle:descTextField];
     [Styles textViewStyle:detailsTextView];
 
+    // Styling buttons
     [Styles buttonStyle:clearBtn];
     [Styles buttonStyle:submitBtn];
 }

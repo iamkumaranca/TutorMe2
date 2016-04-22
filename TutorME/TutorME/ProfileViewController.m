@@ -15,21 +15,17 @@
 @implementation ProfileViewController
 @synthesize fnameLbl, lnameLbl, schoolLbl, programLbl, yearLbl, scoreLbl;
 
+// This method is for initializing firebase refs.
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Initialize Firebase reference
     self.ref = [[Firebase alloc] initWithUrl:@"https://burning-heat-7302.firebaseio.com/"];
     // Points to the JSON tree node "users" with child "uid"
     self.userRef = [[self.ref childByAppendingPath:@"users"] childByAppendingPath:self.ref.authData.uid];
-    
-    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
-    [self.navigationController.navigationBar setTranslucent:NO];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{
-                                                                      NSForegroundColorAttributeName:[UIColor whiteColor],
-                                                                      NSFontAttributeName:[UIFont fontWithName:@"GillSans-Bold" size:20.0]
-                                                                      }];
 }
 
+// This method is used to retriveve the specific user data from the database. The data is displayed in a UILabel so that
+// the user can view their info. In the future, the user will have the ability to edit their profile.
 - (void)viewWillAppear:(BOOL)animated {
     // Retrieve user details data - Firebase method
     [self.userRef observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
@@ -47,6 +43,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+// This method allows the user to logout of the app. It will kill the session with Firebase.
 - (IBAction)logout:(id)sender {
     // Firebase logout
     [self.ref unauth];

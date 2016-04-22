@@ -16,6 +16,7 @@
 @implementation ScoreViewController
 @synthesize nameList, schoolList, scoreList, scoreTableView;
 
+// All Initialization are added in this method.
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -25,15 +26,10 @@
     // Initialize Firebase reference
     self.ref = [[Firebase alloc] initWithUrl:@"https://burning-heat-7302.firebaseio.com/"];
     self.uref = [self.ref childByAppendingPath:@"users"];
-    
-    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
-    [self.navigationController.navigationBar setTranslucent:NO];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{
-                                                                      NSForegroundColorAttributeName:[UIColor whiteColor],
-                                                                      NSFontAttributeName:[UIFont fontWithName:@"GillSans-Bold" size:20.0]
-                                                                      }];
 }
 
+// This method is used to retriveve user data from the database. The data is displayed in a UILabel so that
+// the user can view all the users.
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -54,15 +50,17 @@
     }];
 }
 
-
+// Determine the number of required for the UITableView.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.nameList count];
 }
 
+// Set a custom heigh for the UITableView cell.
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 70;
 }
 
+// Add data from the array into the cell.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *cellId = @"cell";
     
@@ -77,11 +75,10 @@
     cell.schoolLbl.text = [self.schoolList objectAtIndex:row];
     cell.scoreLbl.text = [self.scoreList objectAtIndex:row];
     
-    //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
     return cell;
 }
 
+// This method allows the user to logout of the app. It will kill the session with Firebase.
 - (IBAction)logout:(id)sender {
     // Firebase logout
     [self.ref unauth];
