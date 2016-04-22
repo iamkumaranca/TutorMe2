@@ -24,6 +24,9 @@
 @implementation NewQuestionViewController
 @synthesize descTextField, detailsTextView, nq, activity, tapper, clearBtn, submitBtn;
 
+#pragma mark View Methods
+// This method is for initializing firebase refs, UIView styles, activity indicator, Gesture Recognizer.
+// The gesture recognizer is for dismissing the keyboard
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Initialize Firebase reference
@@ -53,6 +56,8 @@
     [Styles buttonStyle:submitBtn];
 }
 
+// This method is for retrieving the user's first name and last name. The full name is added to the
+// firebase database in the question tree node when a new question is submitted.
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -63,6 +68,8 @@
     }];
 }
 
+#pragma mark Keyboard Related Method
+// This method is for dismissing the keyboard when no editing is happening.
 - (void)handleSingleTap:(UITapGestureRecognizer *) sender
 {
     [self.view endEditing:YES];
@@ -73,15 +80,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma make Button Methods
+// This method is for transitioning to the last UIViewController
 - (IBAction)back:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+// This method is for clearing the all question fields.
 - (IBAction)clearBoth:(id)sender {
     descTextField.text = @"";
     detailsTextView.text = @"";
 }
 
+#pragma mark Text Field Related Methods
+// This method limits the number of characters for the description field.
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     if (textField.text.length >= MAX_LENGTH_140 && range.length == 0) {
         return NO; // Change not allowed
@@ -90,6 +102,7 @@
     }
 }
 
+// This method limits the number of characters for the details field.
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     if (textView.text.length >= MAX_LENGTH_255 && range.length == 0) {
         return NO; // Change not allowed
@@ -98,6 +111,9 @@
     }
 }
 
+#pragma mark Submit Question Related Methods
+// This method is for submitting a question to the database. Error checking is included when the user does not
+// complete the appropriate fields
 - (IBAction)submit:(id)sender {
 
     NSString *msg = @"";
@@ -178,11 +194,14 @@
     }
 }
 
+// This method is for resetting the question fields to initial state when view is loaded.
 - (void)resetBoth {
     self.descTextField.text = @"";
     self.detailsTextView.text = @"Enter additional details here.";
 }
 
+// This is a simple Alert dialog for informing the user of any error when attempting to submit a question
+// to the database. Also used to inform the user if submitting a question to the database is successful.
 - (void)alert:(NSString *)title message:(NSString *)msg {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
