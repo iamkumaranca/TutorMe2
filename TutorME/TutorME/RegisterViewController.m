@@ -20,7 +20,7 @@
 @implementation RegisterViewController
 @synthesize fnameField, lnameField, schoolField, programField, yearSegCtrl, emailField, passwordField, confirmField, registration, activity, clearBtn, submitBtn, personIcon, schoolIcon, registerIcon;
 
-// This method is to intialize the constructor.
+// This method is for initializing firebase refs, activity indicator, and UIView styling.
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Initialize Firebase reference
