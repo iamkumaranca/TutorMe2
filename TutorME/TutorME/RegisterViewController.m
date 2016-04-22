@@ -20,6 +20,7 @@
 @implementation RegisterViewController
 @synthesize fnameField, lnameField, schoolField, programField, yearSegCtrl, emailField, passwordField, confirmField, registration, activity, clearBtn, submitBtn, personIcon, schoolIcon, registerIcon;
 
+// This method is to intialize the constructor.
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Initialize Firebase reference
@@ -33,11 +34,12 @@
     [self.activity setHidden:YES];
     [self.activity stopAnimating];
     
+    // Font Awesome icons
     [Styles fontIcon:personIcon icon:[NSString stringWithUTF8String:"\uF007"]];
     [Styles fontIcon:schoolIcon icon:[NSString stringWithUTF8String:"\uF19D"]];
     [Styles fontIcon:registerIcon icon:[NSString stringWithUTF8String:"\uF084"]];
     
-    // Styling
+    // Border styling
     [Styles fieldStyle:fnameField];
     [Styles fieldStyle:lnameField];
     [Styles fieldStyle:schoolField];
@@ -46,6 +48,7 @@
     [Styles fieldStyle:passwordField];
     [Styles fieldStyle:confirmField];
     
+    // Button styling
     [Styles buttonStyle:clearBtn];
     [Styles buttonStyle:submitBtn];
 }
@@ -55,6 +58,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+// This method will clear all the fields.
 - (IBAction)resetAll:(id)sender {
     self.fnameField.text = @"";
     self.lnameField.text = @"";
@@ -66,6 +70,7 @@
     self.confirmField.text = @"";
 }
 
+// This method will verify and insert the user into the database.
 - (IBAction)submitRegistration:(id)sender {
     NSString *msg = @"";
     
@@ -85,10 +90,6 @@
         // Start Activity Indicator
         [self.activity setHidden:NO];
         [self.activity startAnimating];
-        
-        // TESTING - TO BE REMOVED
-        //msg = [msg stringByAppendingFormat:@"%@||%@||%@||%@||%@||%@||%@||%@", self.registration.fname, self.registration.lname, self.registration.school, self.registration.program, self.registration.year, self.registration.email, self.registration.password, self.registration.confirm];
-        //[self alert:msg];
         
         // Firebase user creation
         [self.ref createUser:self.registration.email password:self.registration.password withValueCompletionBlock:^(NSError *error, NSDictionary *result) {
@@ -128,6 +129,7 @@
     }
 }
 
+// This method is to display a alert dialog when the user does not fll in the required fields.
 - (void)alert:(NSString *)title message:(NSString *)msg {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
@@ -135,6 +137,7 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+// Dismisses the keyboard
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;

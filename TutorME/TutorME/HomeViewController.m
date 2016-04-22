@@ -18,6 +18,7 @@
 @implementation HomeViewController
 @synthesize qidList, descList, detailsList, nameList, dateList, homeTableView;
 
+// This method is to intialize the constructor.
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -34,6 +35,7 @@
     self.dateList = [[NSMutableArray alloc] init];
 }
 
+// This method is used to handle clean up. All objects from data array is removed and the Firebase handle is removed.
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
@@ -46,6 +48,8 @@
     [self.qref removeObserverWithHandle:self.qhandle];
 }
 
+// This method is used to retriveve question data from the database. The data is displayed in a UITableView so that
+// the user can view all the questions.
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
@@ -64,14 +68,17 @@
     }];
 }
 
+// Determine the number of rows required in the cell.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [qidList count];
 }
 
+// Set the height of the UITableView cell
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 105;
 }
 
+// Load the question, detail, name and date into the cell.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *cellId = @"cell";
     
@@ -92,6 +99,7 @@
     return cell;
 }
 
+// This method will redirect the user to the QuestionViewController to show the question in more detail.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Go to Question screen (UINavigationController)
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -110,6 +118,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+// This method allows the user to logout of the app. It will kill the session with Firebase.
 - (IBAction)logout:(id)sender {
     // Firebase logout
     [self.ref unauth];

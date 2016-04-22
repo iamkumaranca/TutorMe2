@@ -19,6 +19,7 @@
 @implementation LoginViewController
 @synthesize emailField, passwordField, activity, login, signInBtn;
 
+// This method is to intialize the constructor.
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -42,11 +43,13 @@
     [super didReceiveMemoryWarning];
 }
 
+// This method is to verify and login the user.
 - (IBAction)login:(id)sender {
     NSString *msg = @"";
     
     self.login = [[Login alloc] initWithData:self.emailField.text password:self.passwordField.text];
     
+    // Checks if both Email and Password fields are filled.
     if (self.login.isPasswordEmpty && login.isEmailEmpty) {
         msg = @"Please enter your email and password.";
         [self alert:msg];
@@ -102,6 +105,7 @@
     }
 }
 
+// Alert dialog method used when fields are not filled.
 - (void)alert:(NSString *)msg {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"ERROR" message:msg preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
@@ -109,6 +113,7 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+// This method will dismiss the keyboard.
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
