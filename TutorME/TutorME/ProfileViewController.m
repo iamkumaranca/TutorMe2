@@ -2,8 +2,7 @@
 //  ProfileViewController.m
 //  TutorME
 //
-//  Created by Kumaran Sathianathan on 2016-04-03.
-//  Copyright © 2016 Kumaran Sathianathan. All rights reserved.
+//  Created by Jimmy Lin on 2016-04-03.
 //
 
 #import "ProfileViewController.h"

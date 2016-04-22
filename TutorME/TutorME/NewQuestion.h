@@ -2,8 +2,7 @@
 //  NewQuestion.h
 //  TutorME
 //
-//  Created by kmayo on 2016-04-05.
-//  Copyright © 2016 kmayo. All rights reserved.
+//  Created by Kumaran Sathianathan on 2016-04-05.
 //
 
 #import <Foundation/Foundation.h>

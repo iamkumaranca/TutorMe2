@@ -2,8 +2,7 @@
 //  NewQuestionViewController.m
 //  TutorME
 //
-//  Created by kmayo on 2016-04-04.
-//  Copyright © 2016 kmayo. All rights reserved.
+//  Created by Kumaran Sathianathan on 2016-04-04.
 //
 
 #import "NewQuestionViewController.h"

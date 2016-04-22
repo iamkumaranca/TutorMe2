@@ -2,8 +2,7 @@
 //  HomeViewController.m
 //  TutorME
 //
-//  Created by kmayo on 2016-04-04.
-//  Copyright © 2016 kmayo. All rights reserved.
+//  Created by Kriz Mayo on 2016-04-04.
 //
 
 #import "HomeViewController.h"

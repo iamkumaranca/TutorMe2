@@ -2,8 +2,7 @@
 //  AppDelegate.m
 //  TutorME
 //
-//  Created by kmayo on 2016-04-03.
-//  Copyright © 2016 kmayo. All rights reserved.
+//  Created by Kriz Mayo on 2016-04-03.
 //
 
 #import "AppDelegate.h"

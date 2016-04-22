@@ -3,7 +3,6 @@
 //  TutorME
 //
 //  Created by Kumaran Sathianathan on 2016-04-21.
-//  Copyright © 2016 kmayo. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

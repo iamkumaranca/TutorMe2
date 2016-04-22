@@ -2,8 +2,7 @@
 //  HomeTableViewCell.h
 //  TutorME
 //
-//  Created by kmayo on 2016-04-05.
-//  Copyright © 2016 kmayo. All rights reserved.
+//  Created by Kriz Mayo on 2016-04-05.
 //
 
 #import <UIKit/UIKit.h>

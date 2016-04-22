@@ -2,8 +2,7 @@
 //  AnswerViewController.m
 //  TutorME
 //
-//  Created by kmayo on 2016-04-21.
-//  Copyright © 2016 kmayo. All rights reserved.
+//  Created by Kriz Mayo on 2016-04-21.
 //
 
 #import "AnswerViewController.h"

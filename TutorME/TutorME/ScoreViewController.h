@@ -2,7 +2,7 @@
 //  ScoreViewController.h
 //  TutorME
 //
-//  Created by kmayo on 2016-04-04.
+//  Created by Jimmy Lin on 2016-04-04.
 //  Copyright © 2016 kmayo. All rights reserved.
 //
 

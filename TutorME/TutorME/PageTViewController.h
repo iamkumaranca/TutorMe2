@@ -2,8 +2,7 @@
 //  PageTViewController.h
 //  TutorME
 //
-//  Created by iOS Xcode User on 2016-04-21.
-//  Copyright © 2016 kmayo. All rights reserved.
+//  Created by Kriz Mayo on 2016-04-21.
 //
 
 #import <UIKit/UIKit.h>

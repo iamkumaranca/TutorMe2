@@ -2,8 +2,7 @@
 //  PageGViewController.m
 //  TutorME
 //
-//  Created by iOS Xcode User on 2016-04-21.
-//  Copyright © 2016 kmayo. All rights reserved.
+//  Created by Jimmy Lin on 2016-04-21.
 //
 
 #import "PageGViewController.h"
