@@ -19,7 +19,7 @@
 @implementation LoginViewController
 @synthesize emailField, passwordField, activity, login, signInBtn;
 
-// This method is to intialize the constructor.
+// This method is for initializing firebase refs, and UIView styles, and activity indicator
 - (void)viewDidLoad {
     [super viewDidLoad];
     
