@@ -12,16 +12,16 @@
 
 + (void)fieldStyle:(UITextField *)f
 {
-    f.layer.borderColor = [[UIColor redColor]CGColor];
+    f.layer.borderColor = [[UIColor grayColor]CGColor];
     f.layer.borderWidth = 2.0;
-    f.layer.cornerRadius = 5;
+    //f.layer.cornerRadius = 5;
 }
 
 + (void)textViewStyle:(UITextView *)t
 {
-    t.layer.borderColor = [[UIColor redColor]CGColor];
+    t.layer.borderColor = [[UIColor grayColor]CGColor];
     t.layer.borderWidth = 2.0;
-    t.layer.cornerRadius = 5;
+    //t.layer.cornerRadius = 5;
 }
 
 + (void)buttonStyle:(UIButton *)b
