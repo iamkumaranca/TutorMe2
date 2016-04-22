@@ -23,6 +23,7 @@
     NSString *qid;
     IBOutlet UIButton *facebook;
     IBOutlet UIButton *twitter;
+    NSMutableArray *ansList;
 }
 
 @property (strong, nonatomic) IBOutlet UITextView *questionTextView;
@@ -35,5 +36,6 @@
 @property (strong, nonatomic) NSString *qid;
 @property (strong, nonatomic) IBOutlet UIButton *facebook;
 @property (strong, nonatomic) IBOutlet UIButton *twitter;
+@property (strong, nonatomic) NSMutableArray *ansList;
 
 @end
