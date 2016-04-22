@@ -25,14 +25,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)logout:(id)sender {
-    // Firebase logout
-    [self.ref unauth];
-    
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UITabBarController *loginTBC = [sb instantiateViewControllerWithIdentifier:@"loginTBC"];
-    [loginTBC setModalPresentationStyle:UIModalPresentationFullScreen];
-    [self presentViewController:loginTBC animated:YES completion:nil];
-}
-
 @end
