@@ -33,18 +33,6 @@
     self.detailsList = [[NSMutableArray alloc] init];
     self.nameList = [[NSMutableArray alloc] init];
     self.dateList = [[NSMutableArray alloc] init];
-    
-    // Initialize Tab Bar and Navigation Bar
-    [self.tabBarController.tabBar setBarTintColor:[UIColor redColor]];
-    [self.tabBarController.tabBar setTranslucent:NO];
-    
-    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
-    [self.navigationController.navigationBar setTranslucent:NO];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{
-                                                                      NSForegroundColorAttributeName:[UIColor whiteColor],
-                                                                      NSFontAttributeName:[UIFont fontWithName:@"GillSans-Bold" size:20.0]
-                                                                      }];
-    
 }
 
 - (void)viewDidDisappear:(BOOL)animated {

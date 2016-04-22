@@ -17,8 +17,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
     
+    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
+                                                           NSFontAttributeName:[UIFont fontWithName:@"GillSans-Bold" size:20.0]
+                                                           }];
+    
+    [[UITabBar appearance] setBarTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setTintColor:[UIColor redColor]];
+    [[UITabBar appearance] setTranslucent:NO];
+
     return YES;
 }
 

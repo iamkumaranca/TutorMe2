@@ -26,6 +26,13 @@
     // Initialize Firebase reference
     self.ref = [[Firebase alloc] initWithUrl:@"https://burning-heat-7302.firebaseio.com/"];
     self.uref = [self.ref childByAppendingPath:@"users"];
+    
+    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
+    [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{
+                                                                      NSForegroundColorAttributeName:[UIColor whiteColor],
+                                                                      NSFontAttributeName:[UIFont fontWithName:@"GillSans-Bold" size:20.0]
+                                                                      }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

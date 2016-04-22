@@ -14,7 +14,7 @@
 @end
 
 @implementation ProfileViewController
-@synthesize fnameLbl, lnameLbl, schoolLbl, programLbl, yearLbl, scoreLbl, editIcon;
+@synthesize fnameLbl, lnameLbl, schoolLbl, programLbl, yearLbl, scoreLbl;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +22,13 @@
     self.ref = [[Firebase alloc] initWithUrl:@"https://burning-heat-7302.firebaseio.com/"];
     // Points to the JSON tree node "users" with child "uid"
     self.userRef = [[self.ref childByAppendingPath:@"users"] childByAppendingPath:self.ref.authData.uid];
+    
+    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
+    [self.navigationController.navigationBar setTranslucent:NO];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{
+                                                                      NSForegroundColorAttributeName:[UIColor whiteColor],
+                                                                      NSFontAttributeName:[UIFont fontWithName:@"GillSans-Bold" size:20.0]
+                                                                      }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -34,9 +41,6 @@
         yearLbl.text = snapshot.value[@"year"];
         scoreLbl.text = [snapshot.value[@"score"] stringValue];
     }];
-    
-    [editIcon setFont:[UIFont fontWithName:@"FontAwesome" size:17]];
-    [editIcon setText:[NSString stringWithUTF8String:"\uF044"]];
 }
 
 - (void)didReceiveMemoryWarning {

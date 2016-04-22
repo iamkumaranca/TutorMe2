@@ -8,10 +8,14 @@
 
 #import "RegisterViewController.h"
 #import "AppDelegate.h"
+#import "Styles.h"
 
 @interface RegisterViewController ()
+
 @property (strong, nonatomic) Firebase *ref;
 @property (strong, nonatomic) Firebase *userRef;
+@property (strong, nonatomic) Styles *styles;
+
 @end
 
 @implementation RegisterViewController
@@ -23,61 +27,28 @@
     self.ref = [[Firebase alloc] initWithUrl:@"https://burning-heat-7302.firebaseio.com/"];
     self.userRef = [self.ref childByAppendingPath:@"users"];
     
+    // Initialize Styles class
+    self.styles = [[Styles alloc] init];
+    
     // Initialize Activity Indicator
     [self.activity setHidden:YES];
     [self.activity stopAnimating];
     
-    [personIcon setFont:[UIFont fontWithName:@"FontAwesome" size:17]];
-    [personIcon setText:[NSString stringWithUTF8String:"\uF007"]];
+    [Styles fontIcon:personIcon icon:[NSString stringWithUTF8String:"\uF007"]];
+    [Styles fontIcon:schoolIcon icon:[NSString stringWithUTF8String:"\uF19D"]];
+    [Styles fontIcon:registerIcon icon:[NSString stringWithUTF8String:"\uF084"]];
     
-    [schoolIcon setFont:[UIFont fontWithName:@"FontAwesome" size:17]];
-    [schoolIcon setText:[NSString stringWithUTF8String:"\uF19D"]];
+    // Styling
+    [Styles fieldStyle:fnameField];
+    [Styles fieldStyle:lnameField];
+    [Styles fieldStyle:schoolField];
+    [Styles fieldStyle:programField];
+    [Styles fieldStyle:emailField];
+    [Styles fieldStyle:passwordField];
+    [Styles fieldStyle:confirmField];
     
-    [registerIcon setFont:[UIFont fontWithName:@"FontAwesome" size:17]];
-    [registerIcon setText:[NSString stringWithUTF8String:"\uF084"]];
-    
-    fnameField.layer.borderColor=[[UIColor redColor]CGColor];
-    fnameField.layer.borderWidth=2.0;
-    fnameField.layer.cornerRadius=5;
-    
-    lnameField.layer.borderColor=[[UIColor redColor]CGColor];
-    lnameField.layer.borderWidth=2.0;
-    lnameField.layer.cornerRadius=5;
-    
-    schoolField.layer.borderColor=[[UIColor redColor]CGColor];
-    schoolField.layer.borderWidth=2.0;
-    schoolField.layer.cornerRadius=5;
-    
-    programField.layer.borderColor=[[UIColor redColor]CGColor];
-    programField.layer.borderWidth=2.0;
-    programField.layer.cornerRadius=5;
-    
-    emailField.layer.borderColor=[[UIColor redColor]CGColor];
-    emailField.layer.borderWidth=2.0;
-    emailField.layer.cornerRadius=5;
-    
-    passwordField.layer.borderColor=[[UIColor redColor]CGColor];
-    passwordField.layer.borderWidth=2.0;
-    passwordField.layer.cornerRadius=5;
-    
-    confirmField.layer.borderColor=[[UIColor redColor]CGColor];
-    confirmField.layer.borderWidth=2.0;
-    confirmField.layer.cornerRadius=5;
-    
-    clearBtn.layer.borderColor=[[UIColor blackColor]CGColor];
-    clearBtn.layer.borderWidth=2.0;
-    clearBtn.layer.cornerRadius=5;
-    
-    submitBtn.layer.borderColor=[[UIColor blackColor]CGColor];
-    submitBtn.layer.borderWidth=2.0;
-    submitBtn.layer.cornerRadius=5;
-    
-    [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
-    [self.navigationController.navigationBar setTranslucent:NO];
-    [self.navigationController.navigationBar setTitleTextAttributes:@{
-                                                                      NSForegroundColorAttributeName:[UIColor whiteColor],
-                                                                      NSFontAttributeName:[UIFont fontWithName:@"GillSans-Bold" size:20.0]
-                                                                      }];
+    [Styles buttonStyle:clearBtn];
+    [Styles buttonStyle:submitBtn];
 }
 
 - (void)didReceiveMemoryWarning {
